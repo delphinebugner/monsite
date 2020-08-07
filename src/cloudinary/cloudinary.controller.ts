@@ -1,4 +1,4 @@
-import {Controller, Get, Inject} from '@nestjs/common';
+import {Controller, Get, Param} from '@nestjs/common';
 import {CloudinaryService} from './cloudinary.service';
 
 @Controller('cloud')
@@ -12,6 +12,11 @@ export class CloudinaryController {
 
   @Get('sample')
   getSampleUrl() :string {
-    return this.cloudinaryService.getSample();
+    return this.cloudinaryService.getUrlSample();
+  }
+
+  @Get('url/:name')
+  getUrl(@Param() name) :string {
+    return this.cloudinaryService.getUrl(name);
   }
 }
