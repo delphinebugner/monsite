@@ -7,13 +7,12 @@ export class AppController {
 
   @Get('/')
   getHello(): string {
-    return "YEAAAAH JE SUIS DANS LE VIDE !! ";
+    return "Root serveur";
   }
 
   @Get('test')
   getTest(): string {
-    console.log('test');
-    return "Hey Girl!";
+    return "Test";
   }
 
   @Get('home')
