@@ -1,4 +1,4 @@
-import {Controller, Get, Param} from '@nestjs/common';
+import {Controller, Get, Header, Param} from '@nestjs/common';
 import {CloudinaryService} from './cloudinary.service';
 
 @Controller('cloud')
@@ -7,7 +7,7 @@ export class CloudinaryController {
 
   @Get('')
   getHello() :string {
-    return process.env.CLOUDINARY_URL ;
+    return 'Hello Cloud!';
   }
 
   @Get('sample')

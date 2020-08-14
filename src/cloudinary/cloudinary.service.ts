@@ -1,15 +1,16 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Cloudinary } from './cloudinary.provider';
+import { ConfigService } from '@nestjs/config';
+
 
 @Injectable()
 export class CloudinaryService {
-  constructor(@Inject(Cloudinary) private cloudinary) {
-    // Hack pour environnement de dev - sur Heroku, la variable de cloudinary est bien settée ! TODO : à quel point les fichiers sources du serveur sont sécurisés ?
-    if(process.env.NODE_ENV !== 'production' ){
+  constructor(@Inject(Cloudinary) private cloudinary, private configService :ConfigService) {
+    if(process.env.NODE_ENV !== 'production'){
       this.cloudinary.v2.config({
-        cloud_name: 'helacbtft',
-        api_key: '695341215467285',
-        api_secret: 'CfMjZJCK2_Q2-rj1h5kWtXxReAs'
+        cloud_name: this.configService.get<string>('CLOUD_NAME'),
+        api_key: this.configService.get<string>('API_KEY'),
+        api_secret: this.configService.get<string>('API_SECRET')
       });
     }
   };
