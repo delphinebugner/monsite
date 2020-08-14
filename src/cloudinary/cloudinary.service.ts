@@ -4,8 +4,8 @@ import { Cloudinary } from './cloudinary.provider';
 @Injectable()
 export class CloudinaryService {
   constructor(@Inject(Cloudinary) private cloudinary) {
-    // Hack pour environnement de dev - sur Heroku, la variable de cloudinary est bien settée ! TODO : à quel points les fichiers sources du serveur sont sécurisés ?
-    if(!process.env.CLOUDINARY_URL){
+    // Hack pour environnement de dev - sur Heroku, la variable de cloudinary est bien settée ! TODO : à quel point les fichiers sources du serveur sont sécurisés ?
+    if(process.env.NODE_ENV !== 'production' ){
       this.cloudinary.v2.config({
         cloud_name: 'helacbtft',
         api_key: '695341215467285',
@@ -19,7 +19,7 @@ export class CloudinaryService {
   };
 
   getUrl(name :string) :string {
-    console.log("Cloudinary url request for ", name)
+    console.log("Cloudinary url request for", name)
     return this.cloudinary.v2.url(name);
   }
 

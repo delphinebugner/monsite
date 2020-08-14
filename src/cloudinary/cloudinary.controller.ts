@@ -16,7 +16,7 @@ export class CloudinaryController {
   }
 
   @Get('url/:name')
-  getUrl(@Param() name) :string {
-    return this.cloudinaryService.getUrl(name);
+  getUrl(@Param() params) :string {
+    return this.cloudinaryService.getUrl(params.name);
   }
 }
