@@ -1,3 +1,4 @@
+import {IImage} from "../interfaces/IImage";
 
 export class AppBackend {
 
@@ -12,23 +13,12 @@ export class AppBackend {
     console.log("Statut de la connection au serveur : ", response.status) ;
   }
 
-  static async getUrlImage(name :string) :Promise<string>{
-    const response = await fetch(process.env.REACT_APP_SERVER_BASE_URL + "/" + AppBackend.cloudinaryControllerEntrypoint + "/");
-    return await response.text();
+  static async getUrlImage(i :IImage) :Promise<IImage>{
+    const response = await fetch(process.env.REACT_APP_SERVER_BASE_URL + "/" + AppBackend.cloudinaryControllerEntrypoint + "/url/" + i.src);
+    i.URL = await response.text();
+    return i;
   }
 
 }
-
-// AppBackend.urlServeur() :string {
-//   return  process.env.REACT_APP_SERVER_BASE_URL ? process.env.REACT_APP_SERVER_BASE_URL : "http://localhost:5000";
-// }
-
-// const response = await fetch(process.env.REACT_APP_SERVER_BASE_URL + "/test");
-// const data = await response.text();
-
-// AppBackend.testBackend = async () => {
-//   const response = await fetch(AppBackend.urlServeur());
-//   return response.status === 200;
-// }
 
 export default AppBackend;
