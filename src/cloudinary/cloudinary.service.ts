@@ -16,14 +16,14 @@ export class CloudinaryService {
   };
 
   getUrlSample() :string{
-    return this.cloudinary.v2.url('sample.jpg');
+    return this.cloudinary.v2.url('sample.jpg', {secure: true});
   };
 
   getUrl(name :string) :string {
-    return this.cloudinary.v2.url(name);
+    return this.cloudinary.v2.url(name, {secure: true});
   }
 
   getUrlImageResized(name :string, width :number, height :number) :string{
-    return this.cloudinary.v2.url(name, { transformation: { width: width, height : height, crop: "fill"}})
+    return this.cloudinary.v2.url(name, { transformation: { width: width, height : height, crop: "fill"}, secure : true})
   }
 }
