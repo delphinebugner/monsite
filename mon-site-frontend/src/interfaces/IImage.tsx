@@ -3,6 +3,10 @@ export interface IImage {
   id: number;
   title?: string;
   description?: string;
-  date_posted?: string;
-  URL?: string;
+  tags?: string[];
+  dateLabel?: string;
+  year?: number;
+  miniatureURL?: string;
+  fullSizeURL?: string;
+  miniatureSize :number;
 }
