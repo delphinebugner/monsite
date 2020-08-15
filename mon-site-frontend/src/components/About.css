@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+.About{
+
+}
+
+.About-content{
+  margin-left: 2em;
+  margin-top : 6em;
+  width: 30vw;
+}
+
+.About-content p{
+  font-size: 1rem;
+}
+
+.About-img {
+  height: 10em;
+  width: 10em;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.About-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.About-shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 5px #a98c8c;
+}
+
+.About-contact:before{
+  content: "Contact : ";
+  font-weight: bold;
+}
