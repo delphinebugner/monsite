@@ -27,7 +27,7 @@ function Navbar({elements, isOnTop} :NavbarProps){
         break;
       case "gallery":
       default :
-        goTo("gallery");
+        goTo("");
     }
   }
 

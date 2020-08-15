@@ -15,7 +15,7 @@ function About() {
 
   useEffect( () => {
     async function loadImage() {
-      const newImage :IImage = await AppBackend.getUrlResized(image, 300);
+      const newImage :IImage = await AppBackend.getUrlResized({src:about.photo.src, id:about.photo.id, miniatureSize:200}, 300);
       // @ts-ignore
       setImage(newImage);
     }
@@ -28,7 +28,7 @@ function About() {
       <h5>A propos</h5>
       <div className={"About-img"}>
         <img alt={about.photo.src} src={image.miniatureURL}/>
-        <div className={"About-shadow"}></div>
+        <div className={"About-shadow"} />
       </div>
       <p>{about.bio}</p>
       <p className="About-contact">{about.contact}</p>

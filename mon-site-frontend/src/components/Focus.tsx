@@ -61,7 +61,13 @@ function Focus({ image, previousId, nextId }: FocusProps){
       <img className={"Focus-img"} src={fullImage.fullSizeURL} alt={image.src} />
     </div>
     <div className={"Focus-close"}>
-      <Button text={"✕"} fontSize={"2em"} onClick={() => goTo("gallery")} paddingRight={false} textShadow={true} outlined={false} style={{color:"white", border:"none"}}/>
+      <Button text={"✕"}
+              fontSize={"2em"}
+              onClick={() => goTo("")}
+              paddingRight={false}
+              textShadow={true}
+              outlined={false}
+              style={{color:"white", border:"none"}}/>
     </div>
   </div>
 }

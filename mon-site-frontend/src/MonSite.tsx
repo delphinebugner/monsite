@@ -93,16 +93,13 @@ function MonSite() {
   return (
     <div className="MonSite">
       <Switch>
-        <Route path={"/gallery"} >
+        <Route path={"/"} exact >
           <div className="MonSite-header">
             <Navbar elements={navbarElements} isOnTop={false} />
           </div>
           <div className={"MonSite-body"}>
             {galleryOfMiniatures}
           </div>
-        </Route>
-        <Route path={"/"} exact>
-          <Redirect to={"gallery"} />
         </Route>
         <Route path={"/about"}>
           <About />
