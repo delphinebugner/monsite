@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+.Focus {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.Focus-leftPanel {
+  flex-grow: 1;
+  position: relative;
+}
+
+.Focus-text {
+  margin-top: 32vh;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.Focus-text h2 {
+  font-weight: 200;
+  font-size: 1.6em;
+  margin-block-end : 0;
+}
+
+.Focus-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 3em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.Focus-text p {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.Focus-prev-next {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}
+
+.Focus-rightPanel{
+  height: 100vh;
+}
+
+.Focus-img {
+  height: 100%;
+}
+
+.Focus-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
