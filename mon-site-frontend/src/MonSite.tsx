@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Switch, Route, useHistory, Redirect} from 'react-router-dom';
+import {Switch, Route, useHistory } from 'react-router-dom';
 import './MonSite.css';
 import AppBackend from "./backend/AppBackend";
 import Focus from "./components/Focus";
