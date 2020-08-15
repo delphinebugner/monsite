@@ -20,8 +20,10 @@ export class CloudinaryService {
   };
 
   getUrl(name :string) :string {
-    console.log("Cloudinary url request for", name)
     return this.cloudinary.v2.url(name);
   }
 
+  getUrlImageResized(name :string, width :number, height :number) :string{
+    return this.cloudinary.v2.url(name, { transformation: { width: width, height : height, crop: "fill"}})
+  }
 }
