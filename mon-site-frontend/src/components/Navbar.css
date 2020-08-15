@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.Navbar {
+  font-family: 'Playfair Display', serif;
+  top: 1em;
+  margin-left: 2em;
+}
+
+.Navbar-list {
+  display: flex;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  border-top: 1px solid black;
+}
