@@ -2,24 +2,22 @@ import React, {useEffect, useState} from 'react';
 import {Switch, Route, useHistory, Redirect} from 'react-router-dom';
 import './MonSite.css';
 import AppBackend from "./backend/AppBackend";
-import Focus from "./focus/Focus";
+import Focus from "./components/Focus";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
 import jsonConfigImages from './config/images.json';
 import {IImage} from "./interfaces/IImage";
 import {INavElement} from "./interfaces/INavElement";
 
 function MonSite() {
-  const [portfolio, setPortfolio] = useState([]);
+  const [portfolio, setPortfolio] = useState([{src:"sample.jpg", id:19932404, miniatureSize:200}]);
   const history = useHistory();
 
   const MaxImageSize = 400;
   const MinImageSize = 150;
 
-  function go(path :string) :void {
-    history.push('/' + path);
-  }
-
   function goToImage(i :IImage) :void {
-    history.push(`/${i.id}`);
+    history.push(`/focus-${i.id}`);
   }
 
   useEffect(() => {
@@ -70,37 +68,48 @@ function MonSite() {
     {id:"filter", title: "Filtrer par thème ..."}
     ];
 
-  const navbar = <div className="MonSite-navbar">
-    {navbarElements.map((n) => <button className="MonSite-navbarElement" key={n.id} onClick={(e) => go(n.id)} >{n.title}</button>)}
-  </div>
+  const routesToEveryImage :object = portfolio.map((image :IImage, k :number) => (
+    <Route path={`/focus-${image.id}`} key={image.src}>
+      <Focus
+        image={image}
+        previousId={(k > 0 ? portfolio[k - 1].id : -1)}
+        nextId={(k < portfolio.length - 1 ? portfolio[k + 1].id : -1)}
+      />
+    </Route>));
+
+  const galleryOfMiniatures :object = portfolio.map((image :IImage) => (
+    <div
+      className="App-img-parent"
+      key={`parent-${image.id}`}
+      style={{
+        width:image.miniatureSize,
+        height:image.miniatureSize,
+        margin:(MaxImageSize - image.miniatureSize)/4
+      }}
+    >
+      <img src={image.miniatureURL} className="App-img-child" alt={image.src} key={image.src} onClick={() => goToImage(image)}/>
+    </div>));
 
   return (
-      <div className="MonSite">
-        <div className="MonSite-header">
-          <div className="MonSite-title">
-            <span>Delphine Bugner</span>
-            {navbar}
+    <div className="MonSite">
+      <Switch>
+        <Route path={"/gallery"} >
+          <div className="MonSite-header">
+            <Navbar elements={navbarElements} isOnTop={false} />
           </div>
-        </div>
-        <div className="MonSite-body">
-          <Switch>
-            <Route path={"/gallery"} >
-              {portfolio.map((i :IImage) =>
-                <div className="App-img-parent" style={{width:i.miniatureSize, height:i.miniatureSize, margin:(MaxImageSize - i.miniatureSize)/4}}  key={`parent-${i.id}`}>
-                  <img src={i.miniatureURL} className="App-img-child" alt={i.src} key={i.src} onClick={() => goToImage(i)}/>
-                </div>
-                )}
-            </Route>
-            <Route path={"/"} exact>
-              <Redirect to={"gallery"} />
-            </Route>
-            {portfolio.map((i :IImage) => (
-              <Route path={`/${i.id}`} key={i.src}>
-                <Focus image={i}/>
-              </Route>))}
-          </Switch>
-        </div>
-      </div>
+          <div className={"MonSite-body"}>
+            {galleryOfMiniatures}
+          </div>
+        </Route>
+        <Route path={"/"} exact>
+          <Redirect to={"gallery"} />
+        </Route>
+        <Route path={"/about"}>
+          <About />
+        </Route>
+        {routesToEveryImage}
+      </Switch>
+    </div>
   );
 }
 
