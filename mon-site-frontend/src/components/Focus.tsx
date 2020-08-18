@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from './Navbar';
+import { Transition } from 'react-transition-group';
 import Button from "./Button";
-import { IImage } from '../interfaces/IImage';
-import { INavElement } from '../interfaces/INavElement';
+import { IImage, srcUrl } from '../interfaces/IImage';
 import AppBackend from "../backend/AppBackend";
 import './Focus.css';
 import {useHistory} from "react-router";
@@ -14,7 +13,8 @@ type FocusProps = {
 }
 
 function Focus({ image, previousId, nextId }: FocusProps){
-  const [fullImage, setFullImage] = useState(image);
+  const [srcUrl, setSrcUrl] = useState({src:image.src, url:"NOT_FOUND"});
+  const [inImage, setInImage] = useState(false);
   const history = useHistory();
 
   function goTo(path :string) :void {
@@ -23,20 +23,32 @@ function Focus({ image, previousId, nextId }: FocusProps){
 
   useEffect( () => {
     async function loadImage() {
-      const fullImage :IImage = await AppBackend.getUrlFullSize(image);
-      setFullImage(fullImage);
+      const u :srcUrl = await AppBackend.getUrlFullSize(image.src);
+      setSrcUrl(u);
+      setInImage(true);
     }
     loadImage();
   }, [image])
 
-  const navbarElements :INavElement[] = [
-    { id : "gallery", title : "Retour"},
-    { id : "about", title: "A propos"}
-  ];
+  const duration = 1000;
+
+  const defaultStyle = {
+    transition: `all ${duration}ms ease-in-out`,
+    opacity: 0,
+    transform: "translate(0.5em, 0.2em)",
+    height: "100vh",
+  }
+
+  const transitionStyles = {
+    entering: { opacity: 1, transform: "none" },
+    entered:  { opacity: 1, transform: "none" },
+    exiting:  { opacity: 0 },
+    exited:  { opacity: 0 },
+    unmounted: { opacity : 0}
+  };
 
   return <div className={"Focus"}>
     <div className={"Focus-leftPanel"}>
-      <Navbar elements={navbarElements} isOnTop={true} />
       <div className={"Focus-text"}>
         <h2>{image.dateLabel}</h2>
         <h1>{image.title}</h1>
@@ -58,7 +70,13 @@ function Focus({ image, previousId, nextId }: FocusProps){
       </div>
     </div>
     <div className={"Focus-rightPanel"}>
-      <img className={"Focus-img"} src={fullImage.fullSizeURL} alt={image.src} />
+      <Transition in={inImage} timeout={duration}>
+        {state  => (
+          <div style={{...defaultStyle, ...transitionStyles[state]}}>
+            <img className={"Focus-img"} src={srcUrl.url} alt={image.src} />
+          </div>
+        )}
+      </Transition>
     </div>
     <div className={"Focus-close"}>
       <Button text={"✕"}

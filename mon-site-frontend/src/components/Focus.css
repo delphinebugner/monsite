@@ -7,6 +7,7 @@
   height: 100vh;
   width: 100vw;
   position: relative;
+  overflow: hidden;
 }
 
 .Focus-leftPanel {
@@ -44,11 +45,13 @@
   justify-content: center;
   position: absolute;
   bottom: 1em;
-  left: 1em;
+  left: 2em;
 }
 
 .Focus-rightPanel{
   height: 100vh;
+  width: 100vh;
+  text-align: center;
 }
 
 .Focus-img {
