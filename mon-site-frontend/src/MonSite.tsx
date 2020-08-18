@@ -1,111 +1,124 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Switch, Route, useHistory } from 'react-router-dom';
 import './MonSite.css';
 import AppBackend from "./backend/AppBackend";
+import ConfigUtils from "./config/ConfigUtils";
 import Focus from "./components/Focus";
-import Navbar from "./components/Navbar";
+import Gallery from "./components/Gallery";
 import About from "./components/About";
 import jsonConfigImages from './config/images.json';
+import jsonConfigGalleries from './config/galleries.json';
 import {IImage} from "./interfaces/IImage";
-import {INavElement} from "./interfaces/INavElement";
+import {IGallery} from "./interfaces/IGallery";
+import {IGalleryElement} from "./interfaces/IGalleryElement";
 
 function MonSite() {
-  const [portfolio, setPortfolio] = useState([{src:"sample.jpg", id:19932404, miniatureSize:200}]);
   const history = useHistory();
 
-  const MaxImageSize = 400;
-  const MinImageSize = 150;
-
-  function goToImage(i :IImage) :void {
-    history.push(`/focus-${i.id}`);
+  function goTo(path :string) :void {
+    history.push(path);
   }
 
   useEffect(() => {
     AppBackend.testServeur();
   }, [])
 
-  useEffect( () => {
-    // tools
-    function getYearFromId(id :number) :number {
-      return Math.floor(id / 10000 );
-    }
-    function getDateLabelFromId(id :number) :string {
-      const year = getYearFromId(id);
-      const month = Math.floor(( id % 10000 ) / 100) - 1 ; // month are from 0 to 11 in DateFormat
-      const date = new Date(year, month);
-      const s = date.toLocaleDateString('fr', {"year":"numeric", "month":"long"});
-      return s.charAt(0).toUpperCase() + s.slice(1);
-    }
-    // Init portfolio with json and interface
-    let jsonPortfolio :IImage[] = jsonConfigImages.map(i => {
-      const j :IImage = {src: i.src, id: i.id, title: i.title, description:i.description, tags:i.tags, dateLabel:getDateLabelFromId(i.id), year:getYearFromId(i.id), miniatureSize:200};
-      return j;
+  const defaultImage :IImage = {
+    id: 19930424,
+    title: "Par défaut",
+    src: "sample.jpg"
+  }
+
+  const colorLandingGallery = "black";
+  const titleLandingGallery = "Portfolio";
+
+  // Init portfolio with json and interface
+  let jsonPortfolio :IImage[] = jsonConfigImages.map(i => {
+    const j :IImage = {
+      src: i.src,
+      id: i.id,
+      title: i.title,
+      description: i.description,
+      tags: i.tags,
+      dateLabel: ConfigUtils.getDateLabelFromId(i.id),
+      year: ConfigUtils.getYearFromId(i.id),
+    };
+    return j;
+  })
+  jsonPortfolio.sort((i :IImage, j:IImage) => j.id - i.id);
+
+  // Init galleries from json (keep json order)
+  const jsonGalleries :IGallery[] = jsonConfigGalleries.map( g => {
+    const h :IGallery = {
+      id: g.id ? g.id : "notfound",
+      color: g.color ? g.color : "black",
+      miniature: g.miniature ? g.miniature : "notfound",
+      title: g.title ? g.title : "notfound"
+    };
+    return h;
+  });
+
+  // Compute elements for individual galleries
+  function galleryOfImages(g :IGallery) :IGalleryElement[]{
+    return jsonPortfolio
+      .filter(image => (image.tags && image.tags.includes(g.id)) || g.id === "all")
+      .map(image => {
+        const element :IGalleryElement = {
+          id: 'element-' + image.id,
+          title: image.title,
+          route: '/focus-' + image.id,
+          image: image
+        };
+        return element;
     })
-    // Sort by id
-    jsonPortfolio.sort((i :IImage, j:IImage) => j.id - i.id);
-    // Get URLs : create an scoped async function in the hook
-    async function loadAllImages() {
-      const promises = jsonPortfolio.map( async (i) => {
-        const size = Math.floor(MinImageSize + Math.random() * (MaxImageSize - MinImageSize)) ;
-        i.miniatureSize = size;
-        return await AppBackend.getUrlResized(i, size);
-        }
-      );
-      jsonPortfolio = await Promise.all(promises);
-      // Only images found
-      jsonPortfolio = jsonPortfolio.filter( (i) => i.miniatureURL !== "NOT_FOUND");
-      // @ts-ignore
-      setPortfolio(jsonPortfolio);
-    }
-    // Execute the created function directly
-    loadAllImages();
-    }, []
-  )
+  }
 
-  const navbarElements :INavElement[] = [
-    {id: "gallery", title: "Galerie"},
-    {id: "about", title: "A propos"},
-    {id:"filter", title: "Filtrer par thème ..."}
-    ];
+  // Compute elements for global gallery of galleries
+  const galleryOfGalleries :IGalleryElement[] = jsonGalleries.map(gallery => {
+      const image = jsonPortfolio.find(image => image.src === gallery.miniature);
+      const galleryElement :IGalleryElement = {
+        id: gallery.id,
+        title: gallery.title,
+        route: '/gallery-' + gallery.id,
+        image: image ? image : defaultImage,
+      }
+      return galleryElement;
+  });
 
-  const routesToEveryImage :object = portfolio.map((image :IImage, k :number) => (
+  // Map over jsonPortofolio to have the routes to images
+  const routesToEveryImage = jsonPortfolio.map((image :IImage, k :number) => (
     <Route path={`/focus-${image.id}`} key={image.src}>
       <Focus
         image={image}
-        previousId={(k > 0 ? portfolio[k - 1].id : -1)}
-        nextId={(k < portfolio.length - 1 ? portfolio[k + 1].id : -1)}
+        previousId={(k > 0 ? jsonPortfolio[k - 1].id : -1)}
+        nextId={(k < jsonPortfolio.length - 1 ? jsonPortfolio[k + 1].id : -1)}
       />
     </Route>));
 
-  const galleryOfMiniatures :object = portfolio.map((image :IImage) => (
-    <div
-      className="App-img-parent"
-      key={`parent-${image.id}`}
-      style={{
-        width:image.miniatureSize,
-        height:image.miniatureSize,
-        margin:(MaxImageSize - image.miniatureSize)/4
-      }}
-    >
-      <img src={image.miniatureURL} className="App-img-child" alt={image.src} key={image.src} onClick={() => goToImage(image)}/>
-    </div>));
+  // Map over jsonGalleries to have the routes to galleries
+  const routesToEveryGallery = jsonGalleries.map(g => <Route path={`/gallery-${g.id}`} key={g.id}>
+    <Gallery title={g.title} elements={galleryOfImages(g)} color={g.color}/>
+  </Route>)
 
   return (
     <div className="MonSite">
+      <div className="MonSite-header">
+        <span className="MonSite-Delphine" onClick={(e) => goTo("/")}>Delphine Bugner</span>
+        <span onClick={(e) => goTo("/About")}>A propos</span>
+      </div>
       <Switch>
         <Route path={"/"} exact >
-          <div className="MonSite-header">
-            <Navbar elements={navbarElements} isOnTop={false} />
-          </div>
-          <div className={"MonSite-body"}>
-            {galleryOfMiniatures}
-          </div>
+          <Gallery elements={galleryOfGalleries} title={titleLandingGallery} color={colorLandingGallery}/>
         </Route>
         <Route path={"/about"}>
           <About />
         </Route>
+        {routesToEveryGallery}
         {routesToEveryImage}
       </Switch>
+      <div className={"MonSite-footer"}>
+        <span>Design by dbugner</span>
+      </div>
     </div>
   );
 }

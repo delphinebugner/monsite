@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.Gallery {
+  display: flex;
+  align-items: stretch;
+  margin-top: 1vw;
+  margin-bottom : 1vw;
+  overflow-x: auto;
+  height: 80vh;
+  direction: ltr;
+  overflow-y: hidden;
+}
+
+.Gallery-title {
+  z-index: 10;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  margin-right: 50vw;
+  font-size: 10vw;
+  text-shadow: 3px 1px 0 white;
+  color: cornflowerblue;
+}
+
+.Gallery::-webkit-scrollbar {
+  height: 3px;
+}
+
+.Gallery::-webkit-scrollbar-thumb{
+  background-color: #e5e5e5;
+  border-radius: 1em;
+}
+
+.Gallery-img-parent {
+  min-width: 25%;
+  margin: 1em;
+  overflow: hidden;
+  background-color: white;
+  transition: all .5s ease;
+  position: relative;
+  cursor: pointer;
+  /*border: 2px solid cornflowerblue;*/
+  /*box-shadow: 10px 10px cornflowerblue ;*/
+}
+
+
+.Gallery-img-child{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+  transition: all .7s ease;
+}
+
+.Gallery-img-title{
+  /*font-family: 'Raleway', sans-serif;*/
+  /*font-variant: all-small-caps;*/
+  font-weight: bold;
+  position: absolute;
+  bottom: 20%;
+  left:20%;
+  margin-right:30%;
+  font-size: 3vw;
+  color: white;
+  text-shadow: 2px 2px 0 cornflowerblue;
+}
+
+.Gallery-img-parent:hover, .Gallery-img-parent:focus{
+  box-shadow: 10px 20px 0 cornflowerblue;
+  transform: scale(1.02);
+}
+
+.Gallery-img-child:hover {
+  /*transform: scale(1.05);*/
+  /*filter: blur(9px);*/
+  /*opacity: 0.4;*/
+}

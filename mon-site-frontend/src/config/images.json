@@ -3,65 +3,65 @@
     "id": 20200401,
     "src": "maison.jpg",
     "title": "26, Avenue de Châteaubriand",
-    "tags": ["Architecture - Paysage"],
+    "tags": ["architecture"],
     "description": "Dessin réalisé pendant le confinement."
   },
   {
     "id": 20200201,
     "src": "pianiste.JPG",
-    "tags": ["Portrait", "Musique"],
+    "tags": ["portrait", "musique"],
     "title": "Le pianiste",
     "description": "Répétition du Requiem de Mozart avec le choeur de la Cité Universitaire."
   },
   {
     "id": 20200103,
     "src": "IMG_6873_ugeogg.jpg",
-    "tags": ["Architecture - Paysage", "Paris"],
+    "tags": ["architecture", "paris"],
     "title": "Dôme des Invalides"
   },
   {
     "id": 20200102,
     "src" : "statue_louvre.jpg",
     "title": "Louvre - Compagne de Diane",
-    "tags": ["Au musée",  "Statue"],
+    "tags": ["musee"],
     "description": "Autrefois placée dans un jardin de château, la statue est désormais visible dans l'aile Richelieu."
   },
   {
     "id": 20200101,
     "src" : "IMG_6976_uds4yb.jpg",
     "title": "Louvre - Statue grecque",
-    "tags": ["Au musée",  "Statue"]
+    "tags": ["musee"]
   },
   {
     "id": 20191101,
     "src" : "IMG_6290_e9egoy.jpg",
     "title": "Les musiciens",
-    "tags": ["Musique"],
+    "tags": ["musique"],
     "description": "Dessin pour l'affiche du concert entre l'harmonie des OPS et l'OEIL (Orchestre des Ingénieurs Etudiants de Liège)."
   },
   {
     "id": 20180801,
     "src": "souffles.jpg",
     "title": "Refuge des souffles",
-    "tags": ["Architecture - Paysage"],
+    "tags": ["architecture"],
     "description": "Randonnée du tour des Ecrins"
   },
   {
     "id": 20170501,
     "src": "petit_palais.jpg",
-    "tags": ["Architecture - Paysage", "Au musée", "Paris"],
+    "tags": ["architecture", "musee", "paris"],
     "title": "Petit Palais"
   },
   {
     "id": 20170401,
     "src": "venise_1.jpg",
-    "tags": ["Voyage", "Aquarelle", "Venise", "Architecture - Paysage"],
+    "tags": ["voyage", "aquarelle", "architecture"],
     "title": "Venise - San Giorgio Majore"
   },
   {
     "id": 20170402,
     "src": "venise_2.jpg",
-    "tags": ["Voyage", "Aquarelle", "Venise", "Architecture - Paysage"],
+    "tags": ["voyage", "aquarelle", "architecture"],
     "title": "Venise - Canareggio"
   }
 ]

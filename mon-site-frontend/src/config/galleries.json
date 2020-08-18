@@ -1,0 +1,39 @@
+[
+  {
+    "id": "all",
+    "title": "Tout parcourir...",
+    "miniature": "statue_louvre.jpg"
+  },
+  {
+    "id": "architecture",
+    "title": "Architecture",
+    "miniature": "maison.jpg"
+  },
+  {
+    "id": "musee",
+    "title": "Au musée",
+    "miniature": "IMG_6976_uds4yb.jpg"
+  },
+  {
+    "id": "portrait",
+    "title": "Portrait",
+    "miniature": "pianiste.JPG"
+  },
+  {
+    "id": "musique",
+    "title": "Musique",
+    "miniature": "IMG_6290_e9egoy.jpg"
+  },
+  {
+    "id": "aquarelle",
+    "title": "Aquarelle",
+    "miniature": "venise_1.jpg",
+    "color": "cornflowerblue"
+  },
+  {
+    "id": "voyage",
+    "title": "Voyages",
+    "miniature": "venise_2.jpg",
+    "color": "gold"
+  }
+]

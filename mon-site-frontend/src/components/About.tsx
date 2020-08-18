@@ -1,33 +1,27 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from './Navbar';
 import AppBackend from "../backend/AppBackend";
-import {INavElement} from "../interfaces/INavElement";
-import {IImage} from "../interfaces/IImage";
 import about from "../config/about.json";
 import './About.css';
 
 function About() {
-  const navbarElements :INavElement[] = [
-    { id : "gallery", title : "Retour"}
-  ];
 
-  const [image, setImage] = useState<IImage>({src:about.photo.src, id:about.photo.id, miniatureSize:200});
+  const defaultImage :string = "BUGNER_Delphine.jpg";
+
+  const [url, setUrl] = useState("NOT_FOUND");
 
   useEffect( () => {
     async function loadImage() {
-      const newImage :IImage = await AppBackend.getUrlResized({src:about.photo.src, id:about.photo.id, miniatureSize:200}, 300);
-      // @ts-ignore
-      setImage(newImage);
+      const loadUrl : { src:string, url: string } = await AppBackend.getUrlResized(about.photo.src ? about.photo.src : defaultImage, 300);
+      setUrl(loadUrl.url);
     }
     loadImage();
-  }, [image])
+  }, [])
 
   return <div className="About">
-    <Navbar elements={navbarElements} isOnTop={true} />
     <div className={"About-content"}>
       <h5>A propos</h5>
       <div className={"About-img"}>
-        <img alt={about.photo.src} src={image.miniatureURL}/>
+        <img alt={about.photo.src} src={url}/>
         <div className={"About-shadow"} />
       </div>
       <p>{about.bio}</p>

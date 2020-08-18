@@ -3,50 +3,45 @@
 }
 
 .MonSite {
-  display: flex;
   min-height: 100vh;
-  background-color: #fcfafa;
-  font-size: calc(10px + 2vmin);
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  font-size: calc(7px + 1vmin);
   color: #4e4e4e;
+  position: relative;
 }
 
 .MonSite-header {
-  min-width: 30vw;
-}
-
-.MonSite-body {
+  font-family: 'Playfair Display', serif;
   display: flex;
-  flex-wrap: wrap;
-  margin: 1vw;
-  align-content: flex-start;
-  overflow: auto;
-}
-
-.App-img-parent {
-  /*height: 200px;*/
-  /*width: 200px;*/
-  margin: 10px;
-  overflow: hidden;
-  border-radius: 50%;
-  transition: all .5s ease;
-}
-
-.App-img-child{
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-  background-position: center;
-  background-size: cover;
-  transition: all .7s ease;
+  align-items: center;
 }
 
-/*.App-img-parent:hover{*/
-/*  transform: scale(1.05);*/
-/*}*/
+.MonSite-header span{
+  margin: 1rem 3rem 0.5rem 3rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  border-bottom: 1px solid transparent;
+}
 
-.App-img-child:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
+.MonSite-header span:hover{
+  border-bottom: 1px solid darkgray;
+}
+
+.MonSite-Delphine {
+  font-size:1.5em;
+}
+
+.MonSite-footer{
+  text-align: center;
+  justify-content: center;
+  color: lightgray;
+  padding: 1em;
 }
 

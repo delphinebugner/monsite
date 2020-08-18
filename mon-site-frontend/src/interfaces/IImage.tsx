@@ -1,12 +1,14 @@
 export interface IImage {
   src: string;
   id: number;
-  title?: string;
+  title: string;
   description?: string;
   tags?: string[];
   dateLabel?: string;
   year?: number;
-  miniatureURL?: string;
-  fullSizeURL?: string;
-  miniatureSize :number;
+}
+
+export type srcUrl = {
+  src: string;
+  url: string;
 }

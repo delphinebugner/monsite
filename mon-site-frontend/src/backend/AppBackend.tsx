@@ -1,6 +1,4 @@
-import {IImage} from "../interfaces/IImage";
-
-export class AppBackend {
+class AppBackend {
 
   static cloudinaryControllerEntrypoint :string = "cloud";
 
@@ -13,8 +11,8 @@ export class AppBackend {
     console.log("Statut de la connection au serveur : ", response.status) ;
   }
 
-  static async getUrl(i :IImage, size :number) :Promise<string> {
-    let path = process.env.REACT_APP_SERVER_BASE_URL + "/" + AppBackend.cloudinaryControllerEntrypoint + "/url/" + i.src;
+  static async getUrl(src :string, size :number) :Promise<string> {
+    let path = process.env.REACT_APP_SERVER_BASE_URL + "/" + AppBackend.cloudinaryControllerEntrypoint + "/url/" + src;
     path += size > 0 ? "/" + size : "";
     const response = await fetch(path);
     const url = await response.text();
@@ -22,16 +20,14 @@ export class AppBackend {
     return testUrlResponse.status === 200 ? url : "NOT_FOUND";
   }
 
-  static async getUrlFullSize(i :IImage) :Promise<IImage> {
-    const fullSizeURL :string = await AppBackend.getUrl(i, -1);
-    i = {...i, fullSizeURL};
-    return i;
+  static async getUrlFullSize(src :string) :Promise<{ src: string, url: string }> {
+    const url :string = await AppBackend.getUrl(src, -1);
+    return { src, url };
   }
 
-  static async getUrlResized(i :IImage, size :number) :Promise<IImage>{
-    const miniatureURL :string = await AppBackend.getUrl(i, size);
-    i = {...i, miniatureURL}
-    return i;
+  static async getUrlResized(src :string, size :number) :Promise<{ src: string, url: string }>{
+    const url :string = await AppBackend.getUrl(src, size);
+    return {src, url};
   }
 }
 
