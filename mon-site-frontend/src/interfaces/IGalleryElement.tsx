@@ -4,5 +4,5 @@ export interface IGalleryElement {
   id: string;
   title: string;
   route: string;
-  image?: IImage;
+  image: IImage;
 }

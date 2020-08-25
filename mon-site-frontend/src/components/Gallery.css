@@ -5,8 +5,8 @@
 .Gallery {
   display: flex;
   align-items: stretch;
-  margin-top: 1vw;
-  margin-bottom : 1vw;
+  padding-top: 1vw;
+  padding-bottom : 1vw;
   overflow-x: auto;
   height: 80vh;
   direction: ltr;
@@ -19,31 +19,28 @@
   top: 10%;
   left: 10%;
   text-align: center;
-  margin-right: 50vw;
-  font-size: 10vw;
-  text-shadow: 3px 1px 0 white;
-  color: cornflowerblue;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 3px 1px 0 white, 3px 2px 4px rgba(0, 0, 0, 0.3);
+  color: antiquewhite;
 }
 
 .Gallery::-webkit-scrollbar {
-  height: 3px;
+  height: 10px;
 }
 
 .Gallery::-webkit-scrollbar-thumb{
-  background-color: #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 1em;
 }
 
 .Gallery-img-parent {
-  min-width: 25%;
+  min-width: 20%;
+  border-radius: 1.5%;
   margin: 1em;
   overflow: hidden;
-  background-color: white;
   transition: all .5s ease;
   position: relative;
   cursor: pointer;
-  /*border: 2px solid cornflowerblue;*/
-  /*box-shadow: 10px 10px cornflowerblue ;*/
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -59,25 +56,49 @@
 }
 
 .Gallery-img-title{
-  /*font-family: 'Raleway', sans-serif;*/
-  /*font-variant: all-small-caps;*/
-  font-weight: bold;
   position: absolute;
   bottom: 20%;
   left:20%;
   margin-right:30%;
-  font-size: 3vw;
   color: white;
-  text-shadow: 2px 2px 0 cornflowerblue;
+}
+
+.Gallery-img-title > p {
+  margin-top:0.3em;
+  margin-bottom:0.3em;
+  line-height: 1.2em;
+}
+
+.Gallery-img-date{
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color:white;
+  font-size: 1.2em;
+  font-variant: all-small-caps;
+  letter-spacing: 4px;
 }
 
 .Gallery-img-parent:hover, .Gallery-img-parent:focus{
-  box-shadow: 10px 20px 0 cornflowerblue;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 10px 20px 0, 10px 21px 2px rgba(0, 0, 0, 0.2); /*si non renseignee, la couleur de l'ombre est portee par le "color" de img-parent*/
   transform: scale(1.02);
 }
 
 .Gallery-img-child:hover {
-  /*transform: scale(1.05);*/
-  /*filter: blur(9px);*/
-  /*opacity: 0.4;*/
+}
+
+.Gallery-close {
+  font-size: 4em;
+  text-shadow: 0 1px 2px lightgray;
+  top: 6rem;
+  right: 2rem;
+  cursor: pointer;
+  position: absolute;
+  color: #f8f8f8;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.Gallery-close:hover{
+  text-shadow: 0 1px 2px grey;
 }
