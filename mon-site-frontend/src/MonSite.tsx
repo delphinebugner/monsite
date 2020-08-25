@@ -29,7 +29,7 @@ function MonSite() {
     src: "sample.jpg"
   }
 
-  const colorLandingGallery = "black";
+  const colorLandingGallery = "cornflowerblue";
   const titleLandingGallery = "Portfolio";
 
   // Init portfolio with json and interface
@@ -51,7 +51,7 @@ function MonSite() {
   const jsonGalleries :IGallery[] = jsonConfigGalleries.map( g => {
     const h :IGallery = {
       id: g.id ? g.id : "notfound",
-      color: g.color ? g.color : "black",
+      color: g.color ? g.color : "cornflowerblue",
       miniature: g.miniature ? g.miniature : "notfound",
       title: g.title ? g.title : "notfound"
     };
@@ -66,7 +66,7 @@ function MonSite() {
         const element :IGalleryElement = {
           id: 'element-' + image.id,
           title: image.title,
-          route: '/focus-' + image.id,
+          route: '/gallery-' + g.id + '/focus-' + image.id,
           image: image
         };
         return element;
@@ -85,30 +85,45 @@ function MonSite() {
       return galleryElement;
   });
 
-  // Map over jsonPortofolio to have the routes to images
-  const routesToEveryImage = jsonPortfolio.map((image :IImage, k :number) => (
-    <Route path={`/focus-${image.id}`} key={image.src}>
-      <Focus
-        image={image}
-        previousId={(k > 0 ? jsonPortfolio[k - 1].id : -1)}
-        nextId={(k < jsonPortfolio.length - 1 ? jsonPortfolio[k + 1].id : -1)}
-      />
-    </Route>));
+  // Map over one gallery to have the routes to images
+  const routesToEveryImageOfGallery = (gallery :IGallery) => {
+    return galleryOfImages(gallery).map((galleryElement :IGalleryElement, k :number, array:IGalleryElement[]) => (
+      <Route path={galleryElement.route} key={galleryElement.image.src}>
+        <Focus
+          image={galleryElement.image}
+          previousId={(k > 0 ? array[k - 1].image.id : -1)}
+          nextId={(k < array.length - 1 ? array[k + 1].image.id : -1)}
+          galleryId={gallery.id}
+          color={gallery.color}
+        />
+      </Route>));
+  };
+
+  // @ts-ignore
+  const routesToEveryImage = jsonGalleries.reduce((routes, g) => [...routes, ...routesToEveryImageOfGallery(g)], []);
 
   // Map over jsonGalleries to have the routes to galleries
-  const routesToEveryGallery = jsonGalleries.map(g => <Route path={`/gallery-${g.id}`} key={g.id}>
-    <Gallery title={g.title} elements={galleryOfImages(g)} color={g.color}/>
-  </Route>)
+  const routesToEveryGallery = jsonGalleries.map(g =>
+    <Route path={`/gallery-${g.id}`} key={g.id} exact>
+      <Gallery
+        title={g.title}
+        elements={galleryOfImages(g)}
+        color={g.color}
+        fontSizeTitle={"8vw"}
+        fontSizeImage={"2.5vw"}
+      />
+    </Route>
+  )
 
   return (
     <div className="MonSite">
       <div className="MonSite-header">
-        <span className="MonSite-Delphine" onClick={(e) => goTo("/")}>Delphine Bugner</span>
+        <span className="MonSite-Delphine" onClick={(e) => goTo("/")}>DelphineBugner</span>
         <span onClick={(e) => goTo("/About")}>A propos</span>
       </div>
       <Switch>
         <Route path={"/"} exact >
-          <Gallery elements={galleryOfGalleries} title={titleLandingGallery} color={colorLandingGallery}/>
+          <Gallery elements={galleryOfGalleries} title={titleLandingGallery} color={colorLandingGallery} showClose={false} showDates={false}/>
         </Route>
         <Route path={"/about"}>
           <About />
@@ -117,7 +132,7 @@ function MonSite() {
         {routesToEveryImage}
       </Switch>
       <div className={"MonSite-footer"}>
-        <span>Design by dbugner</span>
+        <span>Design dbugner - Eté 2020</span>
       </div>
     </div>
   );
