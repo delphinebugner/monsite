@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Butterly';
+  src: local('Butterfly'), url(./fonts/Butterfly.otf) format('otf');
+}
+
 body {
   margin: 0;
   font-family: 'Butterfly', BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
