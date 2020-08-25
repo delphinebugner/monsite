@@ -4,62 +4,115 @@
 
 .Focus {
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
 
-.Focus-leftPanel {
-  flex-grow: 1;
-  position: relative;
+.Focus-textPanel {
+  position: absolute;
+  border-radius: 5px;
+  z-index: 1;
+  top: 3em;
+  left: 2em;
+  width: 30vw;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 10px 10px 0, 10px 11px 2px grey;
+  border: 1px solid cornflowerblue;
+  padding: 1.5em;
+  transition: all 0.4s linear;
 }
 
-.Focus-text {
-  margin-top: 32vh;
-  margin-left: 2em;
-  margin-right: 2em;
+.Focus-textPanel:hover{
+  transform: scale(1.005);
 }
 
-.Focus-text h2 {
-  font-weight: 200;
-  font-size: 1.6em;
+.Focus-textPanel h2 {
+  color: #4e4e4e;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
   margin-block-end : 0;
 }
 
-.Focus-text h1 {
-  font-family: 'Playfair Display', serif;
+.Focus-textPanel h1 {
   font-weight: normal;
-  font-size: 3em;
+  color: #4e4e4e;
+  font-size: 2em;
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-.Focus-text p {
-  font-size: 0.8em;
+.Focus-textPanel p {
+  font-family: 'Raleway', sans-serif;
+  color: #4e4e4e;
   font-weight: 300;
 }
 
-.Focus-prev-next {
-  display: flex;
-  justify-content: center;
+.Focus-button {
   position: absolute;
-  bottom: 1em;
-  left: 2em;
+  color: #f8f8f8;
+  z-index: 2;
 }
 
-.Focus-rightPanel{
-  height: 100vh;
-  width: 100vh;
+.Focus-prev-next {
+  padding:2rem;
+  font-size: 10em;
+  text-shadow: 0 1px 2px lightgray;
+  top: 22vh;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Focus-prev-next span {
+  font-weight: 120;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.Focus-prev-next span:hover{
+  text-shadow:  0 1px 2px grey;
+}
+
+.Focus-close{
+  font-size: 4em;
+  text-shadow: 0 1px 2px lightgray;
+  top: 0;
+  right: 2rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.Focus-close:hover{
+  text-shadow: 0 1px 2px grey;
+}
+
+.Focus-imagePanel{
+  height: calc(100vh - 10em); /*header : 5em, footer : 3em --> 6em a retirer au min, plus la place de l'ombre.*/
+  width: 100vw;
   text-align: center;
 }
 
-.Focus-img {
-  height: 100%;
+.Focus-transition-opacity-enter {
+  opacity: 0;
+}
+.Focus-transition-opacity-enter-active {
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+.Focus-transition-opacity-exit {
+  opacity: 1;
+}
+.Focus-transition-opacity-active {
+  opacity: 0;
+  transition: all 300ms ease-in-out;
 }
 
-.Focus-close {
-  position: absolute;
-  top: 1em;
-  right: 1em;
+.Focus-img {
+  height: calc(100% - 3px);
+  box-shadow: 1px 2px 3px grey;
+  border-radius: 3%;
 }

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { Transition } from 'react-transition-group';
-import Button from "./Button";
+import { CSSTransition } from 'react-transition-group';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IImage, srcUrl } from '../interfaces/IImage';
 import AppBackend from "../backend/AppBackend";
 import './Focus.css';
@@ -10,9 +10,11 @@ type FocusProps = {
   image: IImage,
   previousId: number,
   nextId: number,
+  galleryId: string,
+  color: string
 }
 
-function Focus({ image, previousId, nextId }: FocusProps){
+function Focus({ image, previousId, nextId, galleryId, color }: FocusProps){
   const [srcUrl, setSrcUrl] = useState({src:image.src, url:"NOT_FOUND"});
   const [inImage, setInImage] = useState(false);
   const history = useHistory();
@@ -30,62 +32,39 @@ function Focus({ image, previousId, nextId }: FocusProps){
     loadImage();
   }, [image])
 
-  const duration = 1000;
-
-  const defaultStyle = {
-    transition: `all ${duration}ms ease-in-out`,
-    opacity: 0,
-    transform: "translate(0.5em, 0.2em)",
-    height: "100vh",
-  }
-
-  const transitionStyles = {
-    entering: { opacity: 1, transform: "none" },
-    entered:  { opacity: 1, transform: "none" },
-    exiting:  { opacity: 0 },
-    exited:  { opacity: 0 },
-    unmounted: { opacity : 0}
-  };
-
   return <div className={"Focus"}>
-    <div className={"Focus-leftPanel"}>
-      <div className={"Focus-text"}>
-        <h2>{image.dateLabel}</h2>
-        <h1>{image.title}</h1>
-        <p>{image.description}</p>
-      </div>
-      <div className={"Focus-prev-next"}>
-        <Button
-          text="< Précédent"
-          fontSize="0.8em"
-          visible={previousId > 0}
-          paddingRight={false}
-          onClick={() => goTo(`focus-${previousId}`)} />
-        <Button
-          text="Suivant >"
-          fontSize="0.8em"
-          visible={nextId > 0}
-          onClick={() => goTo(`focus-${nextId}`)}
-        />
-      </div>
+    <div className={"Focus-textPanel"} style={{borderColor:color, color:color}}>
+      <h2>{image.dateLabel}</h2>
+      <h1>{image.title}</h1>
+      <p>{image.description}</p>
     </div>
-    <div className={"Focus-rightPanel"}>
-      <Transition in={inImage} timeout={duration}>
-        {state  => (
-          <div style={{...defaultStyle, ...transitionStyles[state]}}>
-            <img className={"Focus-img"} src={srcUrl.url} alt={image.src} />
-          </div>
-        )}
-      </Transition>
+    <div className={"Focus-imagePanel"}>
+      <CSSTransition
+        in={inImage}
+        timeout={300}
+        classNames={"Focus-transition-opacity"}
+      >
+        <img className={"Focus-img"} src={srcUrl.url} alt={image.src} />
+      </CSSTransition>
     </div>
-    <div className={"Focus-close"}>
-      <Button text={"✕"}
-              fontSize={"2em"}
-              onClick={() => goTo("")}
-              paddingRight={false}
-              textShadow={true}
-              outlined={false}
-              style={{color:"white", border:"none"}}/>
+    <div className={"Focus-prev-next Focus-button"}>
+      <span
+        style={{visibility:(previousId > 0 ? "visible" : "hidden")}}
+        onClick={() => goTo(`gallery-${galleryId}/focus-${previousId}`)}
+      >
+        ❬
+      </span>
+      <span
+        style={{visibility:(nextId > 0 ? "visible" : "hidden")}}
+        onClick={() => goTo(`gallery-${galleryId}/focus-${nextId}`)}
+      >
+        ❭
+      </span>
+    </div>
+    <div className={"Focus-close Focus-button"}>
+      <span onClick={() => goTo(`gallery-${galleryId}`)}>
+        ✕
+      </span>
     </div>
   </div>
 }
