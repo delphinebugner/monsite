@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Butterly';
-  src: local('Butterfly'), url(./fonts/Butterfly.otf) format('otf');
+  font-family: 'Butterfly';
+  src: local('Butterfly'), url(./fonts/Butterfly.otf) format('opentype');
 }
 
 body {
