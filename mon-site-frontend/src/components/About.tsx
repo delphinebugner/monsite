@@ -19,7 +19,7 @@ function About() {
 
   return <div className="About">
     <div className={"About-content"}>
-      <h5>A propos</h5>
+      <h3>A propos</h3>
       <div className={"About-img"}>
         <img alt={about.photo.src} src={url}/>
         <div className={"About-shadow"} />

@@ -3,12 +3,12 @@
 }
 
 .About{
-
+  font-family: 'Raleway', sans-serif;
+  height: calc(100vh - 6em);
 }
 
 .About-content{
   margin-left: 2em;
-  margin-top : 6em;
   width: 30vw;
 }
 
@@ -17,8 +17,8 @@
 }
 
 .About-img {
-  height: 10em;
-  width: 10em;
+  height: 20vh;
+  width: 20vh;
   overflow: hidden;
   border-radius: 50%;
   position: relative;

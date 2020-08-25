@@ -1,8 +1,9 @@
 {
-  "bio": "Ingénieur de formation, Delphine code en semaine et dessine le week-end. Elle a réalisé l'ensemble des dessins de la galerie, ainsi que le site lui-même.",
+  "bio": "Ingénieur de formation, Delphine dessine depuis toujours en auto-didacte.",
   "contact": "delphine.bugner [at] gmail [dot] com",
   "photo": {
     "src" : "BUGNER_Delphine.jpg",
-    "id": 20170701
+    "id": 20170701,
+    "title": "Photo d'identité"
   }
 }
