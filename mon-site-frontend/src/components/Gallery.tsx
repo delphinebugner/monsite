@@ -23,66 +23,82 @@ function Gallery({title, elements, color, fontSizeImage="3vw", fontSizeTitle="10
   }
 
   const [urls, setUrls] =  useState([{src:"", url:""}]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const sizeMiniature = 400;
 
-  console.log("elements", elements);
-
   useEffect( () => {
     async function loadAllImages() {
-      const promises = elements.map( async (e) => {
-        console.log(e);
-        return e.image ? await AppBackend.getUrlResized(e.image.src, sizeMiniature) : {src : "None", url: "NOT_FOUND"} ;
-      });
-      const listOfUrls = (await Promise.all(promises)).filter( (r :srcUrl) => r.url !== "NOT_FOUND");
-      setUrls(listOfUrls);
+      setError(false);
+      setLoading(true);
+      try {
+        const promises = elements.map(async (e) => {
+          return e.image ? await AppBackend.getUrlResized(e.image.src, sizeMiniature) : {src: "None", url: "NOT_FOUND"};
+        });
+        const listOfUrls = (await Promise.all(promises)).filter((r: srcUrl) => r.url !== "NOT_FOUND");
+        setUrls(listOfUrls);
+      }
+      catch (err) {
+        setError(true);
+      }
+      setLoading(false);
     }
     loadAllImages();
     }, [elements]
   )
 
-  return <div className={"Gallery"}>
-    <span
-      className="Gallery-title"
-      style={{
-        fontSize:fontSizeTitle,
-        color
-      }}
-    >
+  const galleryTitle = <span
+    className="Gallery-title"
+    style={{color}}>
       {title}
-    </span>
-    {elements.map((element :IGalleryElement) => {
-      const margin = 0.5 + Math.random() * 10 ;
-      // @ts-ignore
-      const urlForSrc = element.image !== undefined ? (urls.find((u :srcUrl) => u.src === element.image.src)) : undefined;
-      return <div
-        className="Gallery-img-parent"
-        key={`parent-${element.id}`}
-        onClick={() => goTo(element.route)}
-        style={{
-          marginTop: `${margin}em`,
-          marginBottom: `${margin}em`,
-          color,}}
-      >
-        {element.image && urlForSrc ? <img
-          className="Gallery-img-child"
-          src={urlForSrc.url}
-          alt={element.image.src}
-          key={element.image.src}
-          /> : null}
-        <div className={"Gallery-img-title"}>
-          <p className={"Gallery-img-date"}>{showDates ? element.image.dateLabel : null}</p>
-          <p style={{
-            fontSize: fontSizeImage,
-            textShadow: `0 1px 2px rgba(0, 0, 0, 0.3), 3px 1px 0 ${color}`
-          }}>{element.title}</p>
-        </div>
-      </div>})}
-    <div className={"Gallery-close"}>
+    </span>;
+
+  const galleryClose = <div className={"Gallery-close"}>
       <span onClick={() => goTo(`/`)} style={{visibility:showClose ? "visible" : "hidden"}}>
         ✕
       </span>
+  </div>;
+
+  const renderGalleryElement = (element :IGalleryElement) => {
+    const margin = 0.5 + Math.random() * 10 ;
+    // @ts-ignore
+    const urlForSrc = element.image !== undefined ? (urls.find((u :srcUrl) => u.src === element.image.src)) : undefined;
+    return <div
+      className="Gallery-img-parent"
+      key={`parent-${element.id}`}
+      onClick={() => goTo(element.route)}
+      style={{
+        marginTop: `${margin}em`,
+        marginBottom: `${margin}em`,
+        color,}}
+    >
+      {element.image && urlForSrc ? <img
+        className="Gallery-img-child"
+        src={urlForSrc.url}
+        alt={element.image.src}
+        key={element.image.src}
+      /> : null}
+      <div className={"Gallery-img-title"}>
+        {showDates ? <span className={"Gallery-img-date"}>{element.image.dateLabel}</span> : null}
+        <p
+          className={"Gallery-img-name"}
+          style={{
+          textShadow: `-1px 0 ${color}, 0 1px 2px rgba(0, 0, 0, 0.3), 3px 1px 0 ${color}`
+        }}>{element.title}</p>
+      </div>
     </div>
+  }
+
+  return <div className={"Gallery"}>
+    {galleryTitle}
+    {loading
+      ? <div className={"Gallery-placeholder"}>Chargement en cours...</div>
+      : (error
+        ? <div className={"Gallery-placeholder"}>Erreur, impossible de charger les images.</div>
+        : elements.map(renderGalleryElement))
+    }
+    {galleryClose}
   </div>;}
 
 export default Gallery;
