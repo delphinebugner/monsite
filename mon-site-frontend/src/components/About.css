@@ -4,16 +4,16 @@
 
 .About{
   font-family: 'Raleway', sans-serif;
-  height: calc(100vh - 6em);
+  height: calc(100vh - 10em);
 }
 
 .About-content{
-  margin-left: 2em;
-  width: 30vw;
+  margin: 2em;
+  width: 90vw;
 }
 
 .About-content p{
-  font-size: 1rem;
+  font-size: 1.5em;
 }
 
 .About-img {
@@ -44,4 +44,10 @@
 .About-contact:before{
   content: "Contact : ";
   font-weight: bold;
+}
+
+@media screen and (min-width: 1300px) {
+  .About-content {
+    width: 50vw;
+  }
 }
