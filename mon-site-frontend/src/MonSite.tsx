@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Switch, Route, useHistory } from 'react-router-dom';
+import {Switch, Route, useHistory, Redirect } from 'react-router-dom';
 import './MonSite.css';
 import AppBackend from "./backend/AppBackend";
 import ConfigUtils from "./config/ConfigUtils";
@@ -131,6 +131,9 @@ function MonSite() {
         </Route>
         {routesToEveryGallery}
         {routesToEveryImage}
+        <Route>
+          <Redirect to={"/"} />
+        </Route>
       </Switch>
       <div className={"MonSite-footer"}>
         <span>Design dbugner - Eté 2020</span>
