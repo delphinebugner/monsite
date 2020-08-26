@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import AppBackend from "../backend/AppBackend";
 import about from "../config/about.json";
+import {useHistory} from "react-router";
 import './About.css';
+import CloseButton from "./CloseButton";
 
 function About() {
+
+  const history = useHistory();
 
   const defaultImage :string = "BUGNER_Delphine.jpg";
 
@@ -27,6 +31,9 @@ function About() {
       <p>{about.bio}</p>
       <p className="About-contact">{about.contact}</p>
     </div>
+    <CloseButton onClick={() => {
+      history.push(`/`);
+    }} />
   </div>
 }
 

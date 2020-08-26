@@ -5,6 +5,7 @@
 .About{
   font-family: 'Raleway', sans-serif;
   height: calc(100vh - 10em);
+  position: relative;
 }
 
 .About-content{

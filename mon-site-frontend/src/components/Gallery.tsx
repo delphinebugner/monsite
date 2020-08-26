@@ -4,6 +4,7 @@ import {IGalleryElement} from "../interfaces/IGalleryElement";
 import AppBackend from "../backend/AppBackend";
 import './Gallery.css';
 import {srcUrl} from "../interfaces/IImage";
+import CloseButton from "./CloseButton";
 
 type GalleryProp = {
   elements : IGalleryElement[],
@@ -54,12 +55,6 @@ function Gallery({title, elements, color, fontSizeImage="3vw", fontSizeTitle="10
       {title}
     </span>;
 
-  const galleryClose = <div className={"Gallery-close"}>
-      <span onClick={() => goTo(`/`)} style={{visibility:showClose ? "visible" : "hidden"}}>
-        ✕
-      </span>
-  </div>;
-
   const renderGalleryElement = (element :IGalleryElement) => {
     const margin = 0.5 + Math.random() * 10 ;
     // @ts-ignore
@@ -98,7 +93,7 @@ function Gallery({title, elements, color, fontSizeImage="3vw", fontSizeTitle="10
         ? <div className={"Gallery-placeholder"}>Erreur, impossible de charger les images.</div>
         : elements.map(renderGalleryElement))
     }
-    {galleryClose}
+    {showClose ? <CloseButton onClick={() => goTo(`/`)} /> : null}
   </div>;}
 
 export default Gallery;

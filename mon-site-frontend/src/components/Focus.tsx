@@ -5,6 +5,7 @@ import { IImage, srcUrl } from '../interfaces/IImage';
 import AppBackend from "../backend/AppBackend";
 import './Focus.css';
 import {useHistory} from "react-router";
+import CloseButton from "./CloseButton";
 import {IGallery} from "../interfaces/IGallery";
 
 type FocusProps = {
@@ -41,7 +42,6 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
     loadImage();
   }, [image])
 
-  console.log(image);
   const textPanelPosition = image.textPosition === "right" ? {right: "2em", top:"5em"} : {left: "2em", top: "2em"};
 
   const textPanel = <div className={"Focus-textPanel"} style={{borderColor:color, color:color, ...textPanelPosition}}>
@@ -79,11 +79,7 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
     >
       <span> ❭ </span>
     </div>
-    <div className={"Focus-close Focus-button"}>
-      <span onClick={() => goTo(`gallery-${gallery.id}`)}>
-        ✕
-      </span>
-    </div>
+    <CloseButton onClick={() => goTo(`gallery-${gallery.id}`)}/>
   </div>
 }
 
