@@ -93,7 +93,7 @@ function MonSite() {
           image={galleryElement.image}
           previousId={(k > 0 ? array[k - 1].image.id : -1)}
           nextId={(k < array.length - 1 ? array[k + 1].image.id : -1)}
-          galleryId={gallery.id}
+          gallery={gallery}
           color={gallery.color}
         />
       </Route>));
