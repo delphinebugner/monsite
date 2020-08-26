@@ -6,6 +6,7 @@ export interface IImage {
   tags?: string[];
   dateLabel?: string;
   year?: number;
+  textPosition?:string;
 }
 
 export type srcUrl = {

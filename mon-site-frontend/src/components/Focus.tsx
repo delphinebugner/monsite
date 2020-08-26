@@ -41,7 +41,10 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
     loadImage();
   }, [image])
 
-  const textPanel = <div className={"Focus-textPanel"} style={{borderColor:color, color:color}}>
+  console.log(image);
+  const textPanelPosition = image.textPosition === "right" ? {right: "2em", top:"5em"} : {left: "2em", top: "2em"};
+
+  const textPanel = <div className={"Focus-textPanel"} style={{borderColor:color, color:color, ...textPanelPosition}}>
     <span style={{backgroundColor:color}}>{gallery.title}</span>
     <h2>{image.dateLabel}</h2>
     <h1>{image.title}</h1>

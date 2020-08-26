@@ -42,6 +42,7 @@ function MonSite() {
       tags: i.tags,
       dateLabel: ConfigUtils.getDateLabelFromId(i.id),
       year: ConfigUtils.getYearFromId(i.id),
+      textPosition: i.textPosition,
     };
     return j;
   })

@@ -24,7 +24,8 @@
     "src" : "statue_louvre.jpg",
     "title": "Louvre - Compagne de Diane",
     "tags": ["musee"],
-    "description": "Autrefois placée dans un jardin de château, la statue est désormais visible dans l'aile Richelieu."
+    "description": "Autrefois placée dans un jardin de château, la statue est désormais visible dans l'aile Richelieu.",
+    "textPosition": "right"
   },
   {
     "id": 20200101,
@@ -429,7 +430,8 @@
     "src": "IMG_E9334.jpg",
     "tags": ["autriche", "musee"],
     "title": "Egon Schiele",
-    "description": "D'après un autoportrait d'Egon Schiele exposé au musée Leopold de Vienne."
+    "description": "D'après un autoportrait d'Egon Schiele exposé au musée Leopold de Vienne.",
+    "textPosition": "right"
   },
   {
     "id": 20190811,
