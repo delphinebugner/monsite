@@ -5,24 +5,9 @@
     "miniature": "statue_louvre.jpg"
   },
   {
-    "id": "architecture",
-    "title": "Architecture",
-    "miniature": "maison.jpg"
-  },
-  {
     "id": "musee",
     "title": "Au musée",
     "miniature": "IMG_6976_uds4yb.jpg"
-  },
-  {
-    "id": "portrait",
-    "title": "Portrait",
-    "miniature": "pianiste.JPG"
-  },
-  {
-    "id": "musique",
-    "title": "Musique",
-    "miniature": "IMG_6290_e9egoy.jpg"
   },
   {
     "id": "aquarelle",
@@ -31,9 +16,72 @@
     "color": "cornflowerblue"
   },
   {
-    "id": "voyage",
-    "title": "Voyages",
+    "id": "paris",
+    "title": "Paris",
+    "miniature": "IMG_1912.jpg",
+    "color": "gold"
+  },
+  {
+    "id": "venise",
+    "title": "Venise",
     "miniature": "venise_2.jpg",
     "color": "gold"
+  },
+  {
+    "id": "autriche",
+    "title": "Autriche",
+    "miniature": "IMG_E9331.jpg",
+    "color": "#011936"
+  },
+  {
+    "id": "prague",
+    "title": "Prague",
+    "miniature": "IMG_E9343.jpg",
+    "color": "#F08700"
+  },
+  {
+    "id": "allemagne",
+    "title": "Allemagne",
+    "miniature": "IMG_2037.jpg",
+    "color": "gold"
+  },
+  {
+    "id": "france",
+    "title": "A travers la France",
+    "miniature": "souffles.jpg",
+    "color": "#17A398"
+  },
+  {
+    "id": "rerb",
+    "title": "Dans le Rer",
+    "miniature": "IMG_1490.jpg"
+  },
+  {
+    "id": "maisons",
+    "title": "Maisons",
+    "miniature": "maison.jpg",
+    "color": "#BF1363"
+  },
+  {
+    "id": "portrait",
+    "title": "Portraits",
+    "miniature": "IMG_0132.jpg",
+    "color": "#3D3B30"
+  },
+  {
+    "id": "musique",
+    "title": "Musique",
+    "miniature": "IMG_6290_e9egoy.jpg"
+  },
+  {
+    "id": "inprogress",
+    "title": "En cours...",
+    "miniature": "IMG_1346.jpg"
+  },
+  {
+    "id": "diverse",
+    "title": "Divers",
+    "miniature": "IMG_2895_hdab0r.jpg",
+    "color": "cornflowerblue"
   }
 ]
