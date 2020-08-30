@@ -10,13 +10,11 @@ type GalleryProp = {
   elements : IGalleryElement[],
   title : string,
   color: string,
-  fontSizeImage?: string,
-  fontSizeTitle?:string,
   showClose?:boolean,
   showDates?:boolean
 }
 
-function Gallery({title, elements, color, fontSizeImage="3vw", fontSizeTitle="10vw", showClose=true, showDates=true} :GalleryProp){
+function Gallery({title, elements, color, showClose=true, showDates=true} :GalleryProp){
   const history = useHistory();
 
   function goTo(path :string) :void {
@@ -35,7 +33,7 @@ function Gallery({title, elements, color, fontSizeImage="3vw", fontSizeTitle="10
       setLoading(true);
       try {
         const promises = elements.map(async (e) => {
-          return e.image ? await AppBackend.getUrlResized(e.image.src, sizeMiniature) : {src: "None", url: "NOT_FOUND"};
+          return e.image ? await AppBackend.getUrlSquared(e.image.src, sizeMiniature) : {src: "None", url: "NOT_FOUND"};
         });
         const listOfUrls = (await Promise.all(promises)).filter((r: srcUrl) => r.url !== "NOT_FOUND");
         setUrls(listOfUrls);
@@ -85,15 +83,18 @@ function Gallery({title, elements, color, fontSizeImage="3vw", fontSizeTitle="10
     </div>
   }
 
-  return <div className={"Gallery"}>
-    {galleryTitle}
-    {loading
-      ? <div className={"Gallery-placeholder"}>Chargement en cours...</div>
-      : (error
-        ? <div className={"Gallery-placeholder"}>Erreur, impossible de charger les images.</div>
-        : elements.map(renderGalleryElement))
-    }
+  return <div>
+    <div className={"Gallery"}>
+      {galleryTitle}
+      {loading
+        ? <div className={"Gallery-placeholder"}>Chargement en cours...</div>
+        : (error
+          ? <div className={"Gallery-placeholder"}>Erreur, impossible de charger les images.</div>
+          : elements.map(renderGalleryElement))
+      }
+    </div>
     {showClose ? <CloseButton onClick={() => goTo(`/`)} /> : null}
-  </div>;}
+  </div>
+  ;}
 
 export default Gallery;
