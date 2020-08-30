@@ -15,21 +15,23 @@ function About() {
 
   useEffect( () => {
     async function loadImage() {
-      const loadUrl : { src:string, url: string } = await AppBackend.getUrlResized(about.photo.src ? about.photo.src : defaultImage, 300);
+      const loadUrl : { src:string, url: string } = await AppBackend.getUrlSquared(about.photo.src ? about.photo.src : defaultImage, 300);
       setUrl(loadUrl.url);
     }
     loadImage();
   }, [])
 
-  return <div className="About">
-    <div className={"About-content"}>
-      <h3>A propos</h3>
-      <div className={"About-img"}>
-        <img alt={about.photo.src} src={url}/>
-        <div className={"About-shadow"} />
+  return <div>
+    <div className="About">
+      <div className={"About-content"}>
+        <h3>A propos</h3>
+        <div className={"About-img"}>
+          <img alt={about.photo.src} src={url}/>
+          <div className={"About-shadow"} />
+        </div>
+        <p>{about.bio}</p>
+        <p className="About-contact">{about.contact}</p>
       </div>
-      <p>{about.bio}</p>
-      <p className="About-contact">{about.contact}</p>
     </div>
     <CloseButton onClick={() => {
       history.push(`/`);

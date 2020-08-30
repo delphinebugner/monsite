@@ -8,8 +8,8 @@
   z-index: 2;
   font-size: 4em;
   text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-  top: 0;
-  right: 2rem;
+  top: 10%;
+  right: 5%;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
