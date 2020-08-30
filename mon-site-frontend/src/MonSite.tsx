@@ -42,7 +42,6 @@ function MonSite() {
       tags: i.tags,
       dateLabel: ConfigUtils.getDateLabelFromId(i.id),
       year: ConfigUtils.getYearFromId(i.id),
-      textPosition: i.textPosition,
     };
     return j;
   })
@@ -110,8 +109,6 @@ function MonSite() {
         title={g.title}
         elements={galleryOfImages(g)}
         color={g.color}
-        fontSizeTitle={"8vw"}
-        fontSizeImage={"2.5vw"}
       />
     </Route>
   )
