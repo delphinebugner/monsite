@@ -152,14 +152,14 @@
   {
     "id": 20160901,
     "src": "IMG_2167.jpg",
-    "tags": ["london"],
+    "tags": ["londres"],
     "title": "La City",
     "description": "Vue sur la Tour de Londres et la City depuis les bords de la Tamise. Dernier dessin réalisé à Londres."
   },
   {
     "id": 20160601,
     "src": "IMG_1751.jpg",
-    "tags": ["london", "aquarelle"],
+    "tags": ["londres", "aquarelle"],
     "title": "Big Ben",
     "description": "L'incontournable londonien"
   },
@@ -237,7 +237,7 @@
     "src": "IMG_0327.jpg",
     "tags": ["paris"],
     "title": "Montmartre",
-    "description": "Le Cabaret du Lapin Sauvage à Montmartre."
+    "description": "Le Cabaret du Lapin Sauvage."
   },
   {
     "id": 20170603,

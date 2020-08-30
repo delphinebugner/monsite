@@ -22,6 +22,12 @@
     "color": "gold"
   },
   {
+    "id": "londres",
+    "title": "Londres",
+    "miniature": "IMG_1051.jpg",
+    "color": "#D80032"
+  },
+  {
     "id": "venise",
     "title": "Venise",
     "miniature": "venise_2.jpg",
