@@ -26,4 +26,16 @@ export class CloudinaryController {
   getUrlImageResizedSquare(@Param() params) :string {
     return this.cloudinaryService.getUrlImageResized(params.name, params.size, params.size);
   }
+
+  @Get('url/:name/height/:size')
+  @Header('Set-Cookie', 'SameSite=None, Secure')
+  getUrlImageResizedHeight(@Param() params) :string {
+    return this.cloudinaryService.getUrlImageResized(params.name, -1, params.size);
+  }
+
+  @Get('url/:name/width/:size')
+  @Header('Set-Cookie', 'SameSite=None, Secure')
+  getUrlImageResizedWidth(@Param() params) :string {
+    return this.cloudinaryService.getUrlImageResized(params.name, params.size, -1);
+  }
 }

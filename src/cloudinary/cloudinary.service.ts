@@ -23,7 +23,10 @@ export class CloudinaryService {
     return this.cloudinary.v2.url(name, {secure: true});
   }
 
-  getUrlImageResized(name :string, width :number, height :number) :string{
-    return this.cloudinary.v2.url(name, { transformation: { width: width, height : height, crop: "fill"}, secure : true})
+  getUrlImageResized(name :string, width = -1, height = -1) :string{
+    let transformation :Record<string, any> = { crop: "fill"} ;
+    transformation = width > 0 ? {...transformation, width} : transformation;
+    transformation = height > 0 ? {...transformation, height} : transformation;
+    return this.cloudinary.v2.url(name, { transformation, secure : true})
   }
 }
