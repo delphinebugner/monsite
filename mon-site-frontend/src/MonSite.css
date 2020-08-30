@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: #f2f3f6;
-  font-size: calc(7px + 1vmin);
+  font-size: calc(10px + 1vmin);
   color: #4e4e4e;
   position: relative;
 }
