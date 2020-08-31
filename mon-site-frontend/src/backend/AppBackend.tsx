@@ -15,11 +15,8 @@ class AppBackend {
     let path = process.env.REACT_APP_SERVER_BASE_URL + "/" + AppBackend.cloudinaryControllerEntrypoint + "/url/" + src;
     path += isSquared ? "" : (isHeight ? "/height" : "/width");
     path += size > 0 ? "/" + size : "";
-    console.log(path);
     const response = await fetch(path);
     return await response.text();
-    // const testUrlResponse = await fetch(url);
-    // return testUrlResponse.status === 200 ? url : "NOT_FOUND";
   }
 
   static async getUrlFullSize(src :string) :Promise<{ src: string, url: string }> {
