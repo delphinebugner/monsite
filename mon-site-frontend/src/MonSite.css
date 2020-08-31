@@ -16,7 +16,7 @@
 
 .MonSite-header {
   font-family: 'Raleway', sans-serif;
-  height: 5em;
+  height: 68px;
   border-bottom: 1px solid #e5e5e5;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   display: flex;
@@ -44,11 +44,10 @@
 }
 
 .MonSite-footer{
-  height: 3em;
+  height: 34px;
   font-size: smaller;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   justify-content: center;
-  padding: 1em;
 }
 

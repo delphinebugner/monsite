@@ -4,7 +4,7 @@
 
 .Focus {
   display: flex;
-  height: calc(100vh - 10em); /*header : 5em, footer : 3em --> 6em a retirer au min, plus la place de l'ombre.*/
+  height: calc(100vh - 102px - 40px); /*header : 68px, footer : 34px */
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -63,7 +63,7 @@
   line-height: 1.2em;
   color: #4e4e4e;
   font-size: 2em;
-  margin-block-start: 0.4rem;
+  margin-block-start: 0;
   margin-block-end: 0;
 }
 
@@ -71,7 +71,7 @@
   font-family: 'Raleway', sans-serif;
   color: #4e4e4e;
   font-weight: 300;
-  margin-block-start: 0.5rem;
+  margin-block-start: 0.3rem;
 }
 
 .Focus-button {
@@ -108,7 +108,7 @@
 }
 
 .Focus-imagePanel{
-  height: 100%; /*header : 5em, footer : 3em --> 6em a retirer au min, plus la place de l'ombre.*/
+  height: 100%;
   width: 100vw;
   overflow-x: auto;
   overflow-y: hidden;
