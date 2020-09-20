@@ -85,19 +85,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 15em;
+  font-size: 200px;
   font-weight: 200;
   text-shadow: 0 1px 2px grey;
   opacity: 0;
   top:0;
   height: 100%;
   cursor: pointer;
-  transition: all 0.6s ease;
+  transition: all 0.6s ease-in-out;
 }
 
-.Focus-prev-next:hover {
-  opacity: 1;
-}
 
 .Focus-next{
   right: 0;
@@ -148,21 +145,31 @@
 
 .Focus-placeholder {
   width: 100vw;
-  text-align: center;
-  margin-top: 30%;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  color: rgba(0,0,0,.35);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
   font-family: 'Raleway', sans-serif;
+}
+
+.Focus-placeholder span{
+  margin-bottom: 35px;
 }
 
 @media screen and (min-width: 500px) {
   .Focus-textPanel {
     width: 35vw;
   }
+  .Focus-prev-next:hover {
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 1025px) {
-  .Focus-prev-next{
-    opacity: 0;
-  }
   .Focus-textPanel {
     width: 30vw;
   }

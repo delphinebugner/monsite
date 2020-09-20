@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import Spinner from 'react-spinkit';
 import { CSSTransition } from 'react-transition-group';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { IImage, srcUrl } from '../interfaces/IImage';
 import AppBackend from "../backend/AppBackend";
 import './Focus.css';
-import {useHistory} from "react-router";
+import {useHistory} from 'react-router';
 import CloseButton from "./CloseButton";
 import {IGallery} from "../interfaces/IGallery";
 
@@ -19,18 +20,16 @@ type FocusProps = {
 function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
   const [srcUrl, setSrcUrl] = useState({src:image.src, url:"NOT_FOUND"});
   const [visibleTextPanel, setVisibleTextPanel] = useState(window.innerWidth > 600);
-  const [loading, setLoading] = useState(true);
+  const [loadingUrl, setLoadingUrl] = useState(true);
+  const [loadingImg, setLoadingImg] = useState(true);
   const [error, setError] = useState(false);
   const history = useHistory();
 
-  function goTo(path :string) :void {
-    history.push('/' + path);
-  }
-
   useEffect( () => {
-    async function loadImage() {
-      setLoading(true);
+    async function loadUrl() {
       setError(false);
+      setLoadingUrl(true);
+      setLoadingImg(true);
       try{
         const u :srcUrl = await AppBackend.getUrlFixedHeight(image.src, 600);
         setSrcUrl(u);
@@ -38,10 +37,33 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
       catch (err) {
         setError(true);
       }
-      setLoading(false);
+      setLoadingUrl(false);
     }
-    loadImage();
+    loadUrl();
   }, [image])
+
+  const onKeyPress = useCallback((e :KeyboardEvent) => {
+    switch (e.key){
+      case "ArrowRight":
+        history.push(`/gallery-${gallery.id}/focus-${nextId}` );
+        break;
+      case "ArrowLeft":
+        history.push(`/gallery-${gallery.id}/focus-${previousId}`)
+        break;
+      case "Escape":
+        history.push(`/gallery-${gallery.id}`);
+        break;
+      default:
+        break;
+    }
+  }, [gallery.id, previousId, nextId, history]);
+  
+  useEffect(() => {
+    document.addEventListener("keydown", onKeyPress, false);
+    return () => {
+      document.removeEventListener("keydown", onKeyPress, false);
+    };
+  }, [gallery.id, onKeyPress]);
 
   const textPanel = <div
     className={"Focus-textPanel"}
@@ -64,36 +86,43 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
 
   const imagePanel = <div className={"Focus-imagePanel"}>
     <CSSTransition
-      in={!loading}
+      in={!loadingUrl}
       timeout={750}
       classNames={"Focus-transition-opacity"}
     >
-      <img className={"Focus-img"} src={srcUrl.url} alt={image.src} />
+      <img className={"Focus-img"} src={srcUrl.url} alt={image.src} onLoad={() => setLoadingImg(false)}/>
     </CSSTransition>
   </div>;
+
+  const loadingPanel = <div className={"Focus-placeholder"}>
+    <span>Chargement ...</span>
+    <Spinner name="ball-scale-ripple-multiple" color={color} />
+  </div>;
+  const errorPanel = <div className={"Focus-placeholder"}>Erreur, impossible de charger l'image.</div>;
 
   return <div>
     <div className={"Focus"}>
       {textPanel}
       {closeTextPanel}
-      {error
-        ? <div className={"Focus-placeholder"}>Erreur, impossible de charger l'image.</div>
-        : imagePanel
-      }
+      {error && errorPanel}
+      {(loadingUrl || loadingImg) && loadingPanel}
+      {!error && imagePanel}
       <div
-        className={"Focus-prev-next Focus-prev Focus-button"} onClick={() => goTo(`gallery-${gallery.id}/focus-${previousId}`)}
+        className={"Focus-prev-next Focus-prev Focus-button"}
+        onClick={() => history.push(`/gallery-${gallery.id}/focus-${previousId}`)}
         style={{visibility:(previousId > 0 ? "visible" : "hidden")}}
       >
         <span>❬</span>
       </div>
       <div
-        className={"Focus-prev-next Focus-next Focus-button"} onClick={() => goTo(`gallery-${gallery.id}/focus-${nextId}`)}
+        className={"Focus-prev-next Focus-next Focus-button"}
+        onClick={() => history.push(`/gallery-${gallery.id}/focus-${nextId}`)}
         style={{visibility:(nextId > 0 ? "visible" : "hidden")}}
       >
-        <span> ❭ </span>
+        <span>❭</span>
       </div>
     </div>
-    <CloseButton onClick={() => goTo(`gallery-${gallery.id}`)}/>
+    <CloseButton onClick={() => history.push(`/gallery-${gallery.id}`)}/>
   </div>
 }
 
