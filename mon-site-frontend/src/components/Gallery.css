@@ -90,9 +90,16 @@
 
 .Gallery-placeholder{
   width: 100vw;
-  text-align: center;
-  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
   font-family: 'Raleway', sans-serif;
+}
+
+.Gallery-placeholder span{
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 650px) {

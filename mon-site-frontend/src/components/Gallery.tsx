@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Spinner from 'react-spinkit';
 import {useHistory} from "react-router-dom";
 import {IGalleryElement} from "../interfaces/IGalleryElement";
 import AppBackend from "../backend/AppBackend";
@@ -83,15 +84,22 @@ function Gallery({title, elements, color, showClose=true, showDates=true} :Galle
     </div>
   }
 
+  const loadingGallery = <div className={"Gallery-placeholder"}>
+    <Spinner name="ball-grid-pulse" color={color} />
+    <span>Chargement en cours...</span>
+  </div>;
+
+  const errorGallery = <div
+    className={"Gallery-placeholder"}>
+    Erreur, impossible de charger les images.
+  </div>;
+
   return <div>
     <div className={"Gallery"}>
       {galleryTitle}
-      {loading
-        ? <div className={"Gallery-placeholder"}>Chargement en cours...</div>
-        : (error
-          ? <div className={"Gallery-placeholder"}>Erreur, impossible de charger les images.</div>
-          : elements.map(renderGalleryElement))
-      }
+      {loading ? loadingGallery : null}
+      {error ? errorGallery : null}
+      {(!error && !loading) ? elements.map(renderGalleryElement) : null}
     </div>
     {showClose ? <CloseButton onClick={() => goTo(`/`)} /> : null}
   </div>
