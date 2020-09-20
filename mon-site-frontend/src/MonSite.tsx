@@ -113,6 +113,12 @@ function MonSite() {
     </Route>
   )
 
+  const redirectToEveryGallery = jsonGalleries.map(g =>
+    <Route path={`/gallery-${g.id}`} key={g.id}>
+      <Redirect to={`/gallery-${g.id}`} />
+    </Route>
+  )
+
   return (
     <div className="MonSite">
       <div className="MonSite-header">
@@ -126,8 +132,9 @@ function MonSite() {
         <Route path={"/about"}>
           <About />
         </Route>
-        {routesToEveryGallery}
         {routesToEveryImage}
+        {routesToEveryGallery}
+        {redirectToEveryGallery}
         <Route>
           <Redirect to={"/"} />
         </Route>
