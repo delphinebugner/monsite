@@ -55,7 +55,6 @@ function Gallery({title, elements, color, showClose=true, showDates=true} :Galle
     </span>;
 
   const renderGalleryElement = (element :IGalleryElement) => {
-    const margin = 6;// 0.5 + Math.random() * 10 ;
     // @ts-ignore
     const urlForSrc = element.image !== undefined ? (urls.find((u :srcUrl) => u.src === element.image.src)) : undefined;
     return <div
