@@ -337,14 +337,14 @@
     "description": "Série des maisons de l'avenue de Châteabriand réalisée pendant le confinement."
   },
   {
-    "id": 20200403,
+    "id": 20200404,
     "src": "XLRA2625.jpg",
     "tags": ["maisons"],
     "title": "25 Av. Châteaubriand",
     "description": "Série des maisons de l'avenue de Châteabriand réalisée pendant le confinement."
   },
   {
-    "id": 20200403,
+    "id": 20200405,
     "src": "TBMM4719.jpg",
     "tags": ["maisons"],
     "title": "21 Av. Châteaubriand",
@@ -536,5 +536,81 @@
     "tags": ["prague"],
     "title": "Le Théâtre",
     "description": "Petit théâtre vert et blanc à Prague ayant accueilli la première de Don Giovanni, dirigé par Mozart lui-même."
+  },
+  {
+    "id": 20200927,
+    "src": "SELA1645.JPG",
+    "tags": ["musee"],
+    "title": "Renoir",
+    "description": "Femme à la lettre, 1890. Collection du musée de l'Orangerie"
+  },
+  {
+    "id": 20201001,
+    "src": "UAVL2757.jpg",
+    "tags": ["musee"],
+    "title": "Ruines 1",
+    "description": "Exposition de photographies de Josef Koudelka à la BNF. Ruines de la ville de Rome."
+  },
+  {
+    "id": 20201002,
+    "src": "IYUP5223.jpg",
+    "tags": ["musee"],
+    "title": "Ruines 2",
+    "description": "Exposition de photographies de Josef Koudelka à la BNF. Ruines de Didine."
+  },
+  {
+    "id": 20200928,
+    "src": "SFCL2909.jpg",
+    "tags": ["musee"],
+    "title": "Renoir encore",
+    "description": "Jeunes filles au piano, 1892. Collection du musée de l'Orangerie."
+  },
+  {
+    "id": 20201003,
+    "src": "SYKS5944.jpg",
+    "tags": ["musee"],
+    "title": "Christo 1",
+    "description": "Exposition Christo à Beaubourg"
+  },
+  {
+    "id": 20201004,
+    "src": "OAWO7449.jpg",
+    "tags": ["musee"],
+    "title": "Christo 2",
+    "description": "Exposition Christo à Beaubourg"
+  },
+  {
+    "id": 20201201,
+    "src": "WWNQ7546.jpg",
+    "tags": ["paris"],
+    "title": "Saint-Sulpice"
+  },
+  {
+    "id": 20201005,
+    "src": "IMG_E9810.jpg",
+    "tags": ["diverse"],
+    "title": "Flo&Vic",
+    "description": "Dessin réalisé pour un couple d'amis."
+  },
+  {
+    "id": 20201101,
+    "src": "IMG_0111.jpg",
+    "tags": ["diverse"],
+    "title": "Le muSIcien",
+    "description": "Carte de départ d'un collègue d'Artelys (dernière d'une longue série de carte de départs)"
+  },
+  {
+    "id": 20200601,
+    "src": "IMG_8536.jpg",
+    "tags": ["musee"],
+    "title": "Cézanne",
+    "description": "Exposition Cézanne et les peintres d'Italie au musée Marmottan-Monet."
+  },
+  {
+    "id": 20200602,
+    "src": "IMG_8530.jpg",
+    "tags": ["musee"],
+    "title": "Berthe Morizot",
+    "description": "Paule Gobillard peignant. Tableau exposé dans le salon du musée Marmottan-Monet."
   }
 ]
