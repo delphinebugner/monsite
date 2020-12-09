@@ -31,7 +31,7 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps){
       setLoadingUrl(true);
       setLoadingImg(true);
       try{
-        const u :srcUrl = await AppBackend.getUrlFixedHeight(image.src, 600);
+        const u :srcUrl = await AppBackend.getUrlFullSize(image.src);
         setSrcUrl(u);
       }
       catch (err) {
