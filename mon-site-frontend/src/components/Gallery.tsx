@@ -55,7 +55,7 @@ function Gallery({title, elements, color, showClose=true, showDates=true} :Galle
     </span>;
 
   const renderGalleryElement = (element :IGalleryElement) => {
-    const margin = 0.5 + Math.random() * 10 ;
+    const margin = 6;// 0.5 + Math.random() * 10 ;
     // @ts-ignore
     const urlForSrc = element.image !== undefined ? (urls.find((u :srcUrl) => u.src === element.image.src)) : undefined;
     return <div
@@ -63,24 +63,28 @@ function Gallery({title, elements, color, showClose=true, showDates=true} :Galle
       key={`parent-${element.id}`}
       onClick={() => goTo(element.route)}
       style={{
-        marginTop: `${margin}em`,
-        marginBottom: `${margin}em`,
-        color,}}
+        marginTop: `em`,
+        marginBottom: `3em`,
+        color}}
     >
-      {element.image && urlForSrc ? <img
+      {showDates && <div className={"Gallery-img-date"}>
+          <span className={"Gallery-img-date-in"}>
+            {element.image.dateLabel}
+          </span>
+        </div>}
+      {element.image && urlForSrc && <img
         className="Gallery-img-child"
         src={urlForSrc.url}
         alt={element.image.src}
         key={element.image.src}
-      /> : null}
-      <div className={"Gallery-img-title"}>
-        {showDates ? <span className={"Gallery-img-date"}>{element.image.dateLabel}</span> : null}
-        <p
+      />}     
+      <span
           className={"Gallery-img-name"}
           style={{
-          textShadow: `-1px 0 ${color}, 0 1px 2px rgba(0, 0, 0, 0.3), 3px 1px 0 ${color}`
-        }}>{element.title}</p>
-      </div>
+            color
+          }}
+        >{element.title}
+      </span>
     </div>
   }
 
@@ -97,8 +101,8 @@ function Gallery({title, elements, color, showClose=true, showDates=true} :Galle
   return <div>
     <div className={"Gallery"}>
       {galleryTitle}
-      {loading ? loadingGallery : null}
-      {error ? errorGallery : null}
+      {loading && loadingGallery}
+      {error && errorGallery}
       {(!error && !loading) ? elements.map(renderGalleryElement) : null}
     </div>
     {showClose ? <CloseButton onClick={() => goTo(`/`)} /> : null}
