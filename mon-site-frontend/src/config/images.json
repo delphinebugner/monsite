@@ -540,77 +540,140 @@
   {
     "id": 20200927,
     "src": "SELA1645.JPG",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Renoir",
     "description": "Femme à la lettre, 1890. Collection du musée de l'Orangerie"
   },
   {
     "id": 20201001,
     "src": "UAVL2757.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Ruines 1",
     "description": "Exposition de photographies de Josef Koudelka à la BNF. Ruines de la ville de Rome."
   },
   {
     "id": 20201002,
     "src": "IYUP5223.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Ruines 2",
     "description": "Exposition de photographies de Josef Koudelka à la BNF. Ruines de Didine."
   },
   {
     "id": 20200928,
     "src": "SFCL2909.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Renoir encore",
     "description": "Jeunes filles au piano, 1892. Collection du musée de l'Orangerie."
   },
   {
     "id": 20201003,
     "src": "SYKS5944.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Christo 1",
     "description": "Exposition Christo à Beaubourg"
   },
   {
     "id": 20201004,
     "src": "OAWO7449.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Christo 2",
     "description": "Exposition Christo à Beaubourg"
   },
   {
     "id": 20201201,
     "src": "WWNQ7546.jpg",
-    "tags": ["paris"],
+    "tags": ["paris","new"],
     "title": "Saint-Sulpice"
   },
   {
     "id": 20201005,
     "src": "IMG_E9810.jpg",
-    "tags": ["diverse"],
+    "tags": ["diverse","new"],
     "title": "Flo&Vic",
     "description": "Dessin réalisé pour un couple d'amis."
   },
   {
     "id": 20201101,
     "src": "IMG_0111.jpg",
-    "tags": ["diverse"],
+    "tags": ["diverse","new"],
     "title": "Le muSIcien",
     "description": "Carte de départ d'un collègue d'Artelys (dernière d'une longue série de carte de départs)"
   },
   {
     "id": 20200601,
     "src": "IMG_8536.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Cézanne",
     "description": "Exposition Cézanne et les peintres d'Italie au musée Marmottan-Monet."
   },
   {
     "id": 20200602,
     "src": "IMG_8530.jpg",
-    "tags": ["musee"],
+    "tags": ["musee","new"],
     "title": "Berthe Morizot",
     "description": "Paule Gobillard peignant. Tableau exposé dans le salon du musée Marmottan-Monet."
+  },
+  {
+    "src": "Greco1.jpg",
+    "id": 20200104,
+    "tags": ["musee","new"],
+    "title": "Greco 1",
+    "description": "Exposition sur le Greco au Grand Palais. Portrait de St Paul, 1600."
+  },
+  {
+    "src": "Greco2.jpg",
+    "id": 20200105,
+    "tags": ["musee","new"],
+    "title": "Greco 2",
+    "description": "Exposition sur le Greco au Grand Palais. Portrait du frère Paravicino."
+  },
+  {
+    "src": "Greco4.jpg",
+    "id": 20200107,
+    "tags": ["musee", "new"],
+    "title": "Greco 4",
+    "description": "Exposition sur le Greco au Grand Palais. Saint Martin coupant son manteau pour un mendiant."
+  },
+  {
+    "src": "Greco3.jpg",
+    "id": 20200106,
+    "tags": ["musee","new"],
+    "title": "Greco 3",
+    "description": "Exposition sur le Greco au Grand Palais. Le cardinal Guevara (ces lunettes !)"
+  },
+  {
+    "src": "LFRR3678.jpg",
+    "id": 20201202,
+    "tags": ["maison", "new"],
+    "title": "Ivry",
+    "description": "Le café presse de la place Gambetta à Irvy-sur-Seine."
+  },
+  {
+    "src": "louvreNuit.jpg",
+    "id": 20191203,
+    "tags": ["paris", "new"],
+    "title": "Le Louvre",
+    "description": "Une nuit d'hiver, juste après Noël."
+  },
+  {
+    "src": "louvreVinci.jpg",
+    "id": 20191203,
+    "tags": ["musee", "new"],
+    "title": "Vinci",
+    "description": "Portrait de femme à la pointe d'argent. Vu à l'exposition 'Vinci' au Louvre."
+  },
+  {
+    "src": "StGermainDesPres.jpg",
+    "id": 20191201,
+    "tags": ["paris", "new"],
+    "title": "St Germain des Prés",
+    "description": "Statue dans la nef qui jaillit de sa pierre, avec au très beau sourire"
+  },
+  {
+    "src": "WZNB5100.jpg",
+    "id": 20201204,
+    "tags": ["paris", "new"],
+    "title": "L'avion",
+    "description": "Génial jeu en bois d'un square d'Ivry-sur-Seine."
   }
 ]

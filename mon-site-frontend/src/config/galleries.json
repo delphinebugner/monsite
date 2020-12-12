@@ -2,24 +2,37 @@
   {
     "id": "all",
     "title": "Tout parcourir...",
-    "miniature": "statue_louvre.jpg"
+    "miniature": "louvreNuit.jpg"
+  },
+  {
+    "id": "new",
+    "title": "Nouveautés",
+    "miniature": "WZNB5100.jpg",
+    "color": "#1cfeba"
   },
   {
     "id": "musee",
     "title": "Au musée",
-    "miniature": "IMG_6976_uds4yb.jpg"
+    "miniature": "louvreVinci.jpg",
+    "color": "#FFD400"
+  },
+  {
+    "id": "paris",
+    "title": "Paris",
+    "miniature": "EMYE7917.jpg",
+    "color": "gold"
+  },
+  {
+    "id": "maisons",
+    "title": "Maisons",
+    "miniature": "maison.jpg",
+    "color": "#BF1363"
   },
   {
     "id": "aquarelle",
     "title": "Aquarelle",
     "miniature": "venise_1.jpg",
-    "color": "cornflowerblue"
-  },
-  {
-    "id": "paris",
-    "title": "Paris",
-    "miniature": "IMG_1912.jpg",
-    "color": "gold"
+    "color": "#95F2D9"
   },
   {
     "id": "londres",
@@ -61,12 +74,6 @@
     "id": "rerb",
     "title": "Dans le Rer",
     "miniature": "IMG_1490.jpg"
-  },
-  {
-    "id": "maisons",
-    "title": "Maisons",
-    "miniature": "maison.jpg",
-    "color": "#BF1363"
   },
   {
     "id": "portrait",
