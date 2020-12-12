@@ -644,7 +644,7 @@
   {
     "src": "LFRR3678.jpg",
     "id": 20201202,
-    "tags": ["maison", "new"],
+    "tags": ["maisons", "paris", "new"],
     "title": "Ivry",
     "description": "Le café presse de la place Gambetta à Irvy-sur-Seine."
   },
@@ -675,5 +675,292 @@
     "tags": ["paris", "new"],
     "title": "L'avion",
     "description": "Génial jeu en bois d'un square d'Ivry-sur-Seine."
+  },
+  {
+    "src": "2016-Seville.jpg",
+    "id": 20161201,
+    "tags": ["espagne", "new"],
+    "title": "Séville",
+    "description": "Palais et arabesques"
+  },
+  {
+    "src": "201604-Londres-Millenium.jpg",
+    "id": 20160401,
+    "tags": ["londres", "new"],
+    "title": "Millenium Bridge",
+    "description": ""
+  },
+  {
+    "src": "201606-Vogue.jpg",
+    "id": 20160605,
+    "tags": ["london", "musee", "new"],
+    "title": "Vogue",
+    "description": "Rétrospective pour l'anniversaire du magazine. Premiers dessins en exposition/musée (d'une longue série!)"
+  },
+  {
+    "src": "201612-Seville1.jpg",
+    "id": 20161202,
+    "tags": ["espagne", "new"],
+    "title": "Le pont de Séville",
+    "description": ""
+  },
+  {
+    "src": "201612-Seville3.jpg",
+    "id": 20161203,
+    "tags": ["espagne", "new"],
+    "title": "La Giralda",
+    "description": ""
+  },
+  {
+    "src": "201705-Lille.jpg",
+    "id": 20170504,
+    "tags": ["france", "new"],
+    "title": "Quai du Wault",
+    "description": "Dessin réalisé pour un concours du Furet du Nord (il a remporté le 3ème prix)."
+  },
+  {
+    "src": "201706-Paris.jpg",
+    "id": 20170606,
+    "tags": ["paris", "new"],
+    "title": "Moulin Rouge",
+    "description": "Test des feutres reçus en prix d'un concours. Starbuck et Moulin Rouge."
+  },
+  {
+    "src": "201706-Paris2.jpg",
+    "id": 20170607,
+    "tags": ["paris", "musique", "new"],
+    "title": "Parvi de l'opéra",
+    "description": "Danseurs de tango amateurs s'exerçant sur le parvis de l'opéra Garnier."
+  },
+  {
+    "src": "201706-Paris3.jpg",
+    "id": 20170608,
+    "tags": ["paris", "new"],
+    "title": "Hausmann",
+    "description": "Et ses balcons fuyants."
+  },
+  {
+    "src": "201709-Lille.jpg",
+    "id": 20170903,
+    "tags": ["france", "maisons","new"],
+    "title": "Place aux Oignons",
+    "description": "Le Vieux Lille et ses pavés."
+  },
+  {
+    "src": "201801-Londres.jpg",
+    "id": 20180102,
+    "tags": ["london", "new"],
+    "title": "Parlement",
+    "description": "La tour Victoria du parlement de Londres"
+  },
+  {
+    "src": "201805-Philar.jpg",
+    "id": 20180502,
+    "tags": ["musique", "new"],
+    "title": "Le timbalier",
+    "description": "Concert à la philharmonie de Paris"
+  },
+  {
+    "src": "201806-Collioure.jpg",
+    "id": 20180602,
+    "tags": ["france", "new"],
+    "title": "Collioure",
+    "description": "Le port"
+  },
+  {
+    "src": "201807-HoteldeVille.jpg",
+    "id": 20180701,
+    "tags": ["paris", "new"],
+    "title": "Hôtel de Ville",
+    "description": "Clocheton de l'hôtel de ville de Paris, dessiné pendant le Fnac Live."
+  },
+  {
+    "src": "201808-NotreDame.jpg",
+    "id": 20180802,
+    "tags": ["paris", "new"],
+    "title": "Notre-Dame",
+    "description": "Quand elle avait encore un toit :( La flêche de Viollet le duc n'a pas été jugée digne du dessin ... Vue depuis les quais de Seine rive droite."
+  },
+  {
+    "src": "201808-RER.jpg",
+    "id": 20180803,
+    "tags": ["rerb", "new"],
+    "title": "Ete 2018",
+    "description": ""
+  },
+  {
+    "src": "201811-RER.jpg",
+    "id": 20181104,
+    "tags": ["rerb", "new"],
+    "title": "Automne 2018",
+    "description": ""
+  },
+  {
+    "src": "201811-RER2.jpg",
+    "id": 20181105,
+    "tags": ["rerb", "new"],
+    "title": "Automne 2018",
+    "description": ""
+  },
+  {
+    "src": "201901-Caravage1.jpg",
+    "id": 20190102,
+    "tags": ["musee", "new"],
+    "title": "Caravage",
+    "description": "Exposition merveilleuse au musée Jacquemars-André"
+  },
+  {
+    "src": "201901-Caravage2.jpg",
+    "id": 20190103,
+    "tags": ["musee", "new"],
+    "title": "Caravage",
+    "description": "Exposition merveilleuse au musée Jacquemars-André"
+  },
+  {
+    "src": "201901-Caravage3.jpg",
+    "id": 20190104,
+    "tags": ["musee", "new"],
+    "title": "Caravage",
+    "description": "Exposition merveilleuse au musée Jacquemars-André"
+  },
+  {
+    "src": "201901-Caravage4.jpg",
+    "id": 20190105,
+    "tags": ["musee", "new"],
+    "title": "Caravage",
+    "description": "Exposition merveilleuse au musée Jacquemars-André"
+  },
+  {
+    "src": "201901-RER.jpg",
+    "id": 20190106,
+    "tags": ["rerb", "new"],
+    "title": "Hiver 2019",
+    "description": ""
+  },
+  {
+    "src": "201902-Beethoven.jpg",
+    "id": 20190203,
+    "tags": ["musique", "new"],
+    "title": "Beethoven",
+    "description": "Portrait réalisé pour une affiche de concert OPS."
+  },
+  {
+    "src": "201902-DansMacabre.jpg",
+    "id": 20190204,
+    "tags": ["musique", "new"],
+    "title": "Danse Macabre",
+    "description": "Librement inspirée des Noces Funêbres pour illustrer la Danse Macabre d'un concert OPS."
+  },
+  {
+    "src": "201902-Pantheon.jpg",
+    "id": 20190205,
+    "tags": ["paris", "new"],
+    "title": "Panthéon",
+    "description": "Bonjour Simone"
+  },
+  {
+    "src": "201906-CiteMusique.jpg",
+    "id": 20190601,
+    "tags": ["musique", "paris", "new"],
+    "title": "Cité de la musique",
+    "description": "Dans le nord de Paris, au pied de la Philharmonie. Dessin réalisé au bic car on n'avait rien d'autre sous la main à l'instant."
+  },
+  {
+    "src": "201906-Louvre.jpg",
+    "id": 20190602,
+    "tags": ["musee", "new"],
+    "title": "Delatour",
+    "description": "Comment tenter de retranscrire les lumières de Delatour juste à l'encre et aux hâchures ..."
+  },
+  {
+    "src": "201906-RER.jpg",
+    "id": 20190603,
+    "tags": ["rerb", "new"],
+    "title": "21 juin",
+    "description": ""
+  },
+  {
+    "src": "201906-RER2.jpg",
+    "id": 20190604,
+    "tags": ["rerb", "new"],
+    "title": "13 juin",
+    "description": ""
+  },
+  {
+    "src": "201906-RER3.jpg",
+    "id": 20190605,
+    "tags": ["rerb", "new"],
+    "title": "14 juin",
+    "description": ""
+  },
+  {
+    "src": "201906-Vigee.jpg",
+    "id": 20190606,
+    "tags": ["musee", "new"],
+    "title": "Vigée-Lebrun",
+    "description": "Tableau du Louvre"
+  },
+  {
+    "src": "201907-Eiffel.jpg",
+    "id": 20190701,
+    "tags": ["paris", "new"],
+    "title": "Tour Eiffel",
+    "description": "En attendant les feux d'artifices du 14 juillet ..."
+  },
+  {
+    "src": "201907-Morisot.jpg",
+    "id": 20190702,
+    "tags": ["musee", "new"],
+    "title": "Berthe Morisot",
+    "description": "Sur l'herbe - Exposition au musée d'Orsay"
+  },
+  {
+    "src": "201907-Morisot2.jpg",
+    "id": 20190703,
+    "tags": ["musee", "new"],
+    "title": "Berthe Morisot",
+    "description": "Intérieur - Exposition au musée d'Orsay"
+  },
+  {
+    "src": "201907-RER.jpg",
+    "id": 20190704,
+    "tags": ["rerb", "new"],
+    "title": "Ete 2019",
+    "description": ""
+  },
+  {
+    "src": "201907-RER2.jpg",
+    "id": 20190705,
+    "tags": ["rerb", "new"],
+    "title": "Ete 2019",
+    "description": ""
+  },
+  {
+    "src": "201909-Fanf.jpg",
+    "id": 20190901,
+    "tags": ["musique", "new"],
+    "title": "Fanfare Climatique",
+    "description": "Bannière pour une répétition ouverte de la fanfare climatique à Paris."
+  },
+  {
+    "src": "201911-ToulouseLautrec.jpg",
+    "id": 20191102,
+    "tags": ["musee", "new"],
+    "title": "Toulouse-Lautrec",
+    "description": "Exposition au Grand Palais"
+  },
+  {
+    "src": "201911-ToulouseLautrec2.jpg",
+    "id": 20191103,
+    "tags": ["musee", "new"],
+    "title": "Toulouse-Lautrec",
+    "description": "Exposition au Grand Palais - Jane Avril dansant"
+  },
+  {
+    "src": "201911-ToulouseLautrec3.jpg",
+    "id": 20191104,
+    "tags": ["musee", "new"],
+    "title": "Toulouse-Lautrec",
+    "description": "Exposition au Grand Palais - Jeanne Wenz"
   }
 ]

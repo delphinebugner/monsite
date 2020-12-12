@@ -23,6 +23,12 @@
     "color": "gold"
   },
   {
+    "id": "france",
+    "title": "En France",
+    "miniature": "201709-Lille.jpg",
+    "color": "#17A398"
+  },
+  {
     "id": "maisons",
     "title": "Maisons",
     "miniature": "maison.jpg",
@@ -59,16 +65,16 @@
     "color": "#F08700"
   },
   {
+    "id": "espagne",
+    "title": "Espagne",
+    "miniature": "201612-Seville3.jpg",
+    "color": "#F1AB86"
+  },
+  {
     "id": "allemagne",
     "title": "Allemagne",
     "miniature": "IMG_2037.jpg",
-    "color": "gold"
-  },
-  {
-    "id": "france",
-    "title": "En France",
-    "miniature": "souffles.jpg",
-    "color": "#17A398"
+    "color": "#F7DBA7"
   },
   {
     "id": "rerb",
@@ -76,20 +82,10 @@
     "miniature": "IMG_1490.jpg"
   },
   {
-    "id": "portrait",
-    "title": "Portraits",
-    "miniature": "IMG_0132.jpg",
-    "color": "#3D3B30"
-  },
-  {
     "id": "musique",
     "title": "Musique",
-    "miniature": "IMG_6290_e9egoy.jpg"
-  },
-  {
-    "id": "inprogress",
-    "title": "En cours...",
-    "miniature": "IMG_1346.jpg"
+    "miniature": "IMG_6290_e9egoy.jpg",
+    "color": "#FFA0AC"
   },
   {
     "id": "diverse",
