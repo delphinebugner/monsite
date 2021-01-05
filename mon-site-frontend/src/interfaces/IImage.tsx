@@ -11,4 +11,4 @@ export interface IImage {
 export type srcUrl = {
   src: string;
   url: string;
-}
+};

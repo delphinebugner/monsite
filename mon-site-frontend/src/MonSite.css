@@ -18,7 +18,7 @@
   font-family: 'Raleway', sans-serif;
   height: 68px;
   border-bottom: 1px solid #e5e5e5;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -26,7 +26,7 @@
   background-color: white;
 }
 
-.MonSite-header span{
+.MonSite-header span {
   margin: 1rem 2rem 0.5rem 2rem;
   padding-bottom: 0.5rem;
   cursor: pointer;
@@ -34,7 +34,7 @@
   border-bottom: 1px solid transparent;
 }
 
-.MonSite-header span:hover{
+.MonSite-header span:hover {
   color: #638edb;
 }
 
@@ -43,11 +43,10 @@
   font-size: 2em;
 }
 
-.MonSite-footer{
+.MonSite-footer {
   height: 34px;
   font-size: smaller;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   justify-content: center;
 }
-

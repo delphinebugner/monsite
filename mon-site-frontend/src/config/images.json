@@ -16,12 +16,12 @@
   {
     "id": 20200103,
     "src": "IMG_6873_ugeogg.jpg",
-    "tags": [ "paris"],
+    "tags": ["paris"],
     "title": "Dôme des Invalides"
   },
   {
     "id": 20200102,
-    "src" : "statue_louvre.jpg",
+    "src": "statue_louvre.jpg",
     "title": "Louvre - Compagne de Diane",
     "tags": ["musee"],
     "description": "Autrefois placée dans un jardin de château, la statue est désormais visible dans l'aile Richelieu.",
@@ -29,13 +29,13 @@
   },
   {
     "id": 20200101,
-    "src" : "IMG_6976_uds4yb.jpg",
+    "src": "IMG_6976_uds4yb.jpg",
     "title": "Louvre - Statue grecque",
     "tags": ["musee"]
   },
   {
     "id": 20191101,
-    "src" : "IMG_6290_e9egoy.jpg",
+    "src": "IMG_6290_e9egoy.jpg",
     "title": "Les musiciens",
     "tags": ["musique"],
     "description": "Dessin pour l'affiche du concert entre l'harmonie des OPS et l'OEIL (Orchestre des Ingénieurs Etudiants de Liège)."
@@ -87,7 +87,7 @@
   {
     "id": 20170406,
     "src": "IMG_2966_ifgl84.jpg",
-    "tags": ["venise",  "aquarelle"],
+    "tags": ["venise", "aquarelle"],
     "title": "Murano"
   },
   {
@@ -540,90 +540,90 @@
   {
     "id": 20200927,
     "src": "SELA1645.JPG",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Renoir",
     "description": "Femme à la lettre, 1890. Collection du musée de l'Orangerie"
   },
   {
     "id": 20201001,
     "src": "UAVL2757.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Ruines 1",
     "description": "Exposition de photographies de Josef Koudelka à la BNF. Ruines de la ville de Rome."
   },
   {
     "id": 20201002,
     "src": "IYUP5223.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Ruines 2",
     "description": "Exposition de photographies de Josef Koudelka à la BNF. Ruines de Didine."
   },
   {
     "id": 20200928,
     "src": "SFCL2909.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Renoir encore",
     "description": "Jeunes filles au piano, 1892. Collection du musée de l'Orangerie."
   },
   {
     "id": 20201003,
     "src": "SYKS5944.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Christo 1",
     "description": "Exposition Christo à Beaubourg"
   },
   {
     "id": 20201004,
     "src": "OAWO7449.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Christo 2",
     "description": "Exposition Christo à Beaubourg"
   },
   {
     "id": 20201201,
     "src": "WWNQ7546.jpg",
-    "tags": ["paris","new"],
+    "tags": ["paris", "new"],
     "title": "Saint-Sulpice"
   },
   {
     "id": 20201005,
     "src": "IMG_E9810.jpg",
-    "tags": ["diverse","new"],
+    "tags": ["diverse", "new"],
     "title": "Flo&Vic",
     "description": "Dessin réalisé pour un couple d'amis."
   },
   {
     "id": 20201101,
     "src": "IMG_0111.jpg",
-    "tags": ["diverse","new"],
+    "tags": ["diverse", "new"],
     "title": "Le muSIcien",
     "description": "Carte de départ d'un collègue d'Artelys (dernière d'une longue série de carte de départs)"
   },
   {
     "id": 20200601,
     "src": "IMG_8536.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Cézanne",
     "description": "Exposition Cézanne et les peintres d'Italie au musée Marmottan-Monet."
   },
   {
     "id": 20200602,
     "src": "IMG_8530.jpg",
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Berthe Morizot",
     "description": "Paule Gobillard peignant. Tableau exposé dans le salon du musée Marmottan-Monet."
   },
   {
     "src": "Greco1.jpg",
     "id": 20200104,
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Greco 1",
     "description": "Exposition sur le Greco au Grand Palais. Portrait de St Paul, 1600."
   },
   {
     "src": "Greco2.jpg",
     "id": 20200105,
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Greco 2",
     "description": "Exposition sur le Greco au Grand Palais. Portrait du frère Paravicino."
   },
@@ -637,7 +637,7 @@
   {
     "src": "Greco3.jpg",
     "id": 20200106,
-    "tags": ["musee","new"],
+    "tags": ["musee", "new"],
     "title": "Greco 3",
     "description": "Exposition sur le Greco au Grand Palais. Le cardinal Guevara (ces lunettes !)"
   },
@@ -742,7 +742,7 @@
   {
     "src": "201709-Lille.jpg",
     "id": 20170903,
-    "tags": ["france", "maisons","new"],
+    "tags": ["france", "maisons", "new"],
     "title": "Place aux Oignons",
     "description": "Le Vieux Lille et ses pavés."
   },
