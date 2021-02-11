@@ -14,6 +14,7 @@
 }
 
 .Gallery-title {
+  font-family: 'Butterfly', serif;
   font-size: 5em;
   z-index: 1;
   position: absolute;
@@ -73,6 +74,7 @@
 }
 
 .Gallery-img-name {
+  font-family: 'Butterfly', serif;
   position: absolute;
   bottom: -52px;
   left: 0px;
