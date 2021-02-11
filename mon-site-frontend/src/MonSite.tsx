@@ -33,27 +33,29 @@ function MonSite() {
   const titleLandingGallery = 'Portfolio';
 
   // Init portfolio with json and interface
-  let jsonPortfolio: IImage[] = jsonConfigImages.map(i => {
-    const j: IImage = {
-      src: i.src,
-      id: i.id,
-      title: i.title,
-      description: i.description,
-      tags: i.tags,
-      dateLabel: ConfigUtils.getDateLabelFromId(i.id),
-      year: ConfigUtils.getYearFromId(i.id),
-    };
-    return j;
-  });
+  let jsonPortfolio: IImage[] = jsonConfigImages.map(imageJson => ({
+    src: imageJson.src,
+    id: imageJson.id,
+    title: imageJson.title,
+    description: imageJson.description,
+    tags: imageJson.tags,
+    dateLabel: ConfigUtils.getDateLabelFromId(imageJson.id),
+    year: ConfigUtils.getYearFromId(imageJson.id),
+  }));
   jsonPortfolio.sort((i: IImage, j: IImage) => j.id - i.id);
+  jsonPortfolio.forEach((imageJson, index) => {
+    if (index > 0 && imageJson.id === jsonPortfolio[index - 1].id) {
+      console.error("Doublon d'id !!", imageJson.id);
+    }
+  });
 
   // Init galleries from json (keep json order)
   const jsonGalleries: IGallery[] = jsonConfigGalleries.map(g => {
     const h: IGallery = {
-      id: g.id ? g.id : 'notfound',
-      color: g.color ? g.color : 'cornflowerblue',
-      miniature: g.miniature ? g.miniature : 'notfound',
-      title: g.title ? g.title : 'notfound',
+      id: g.id ?? 'notfound',
+      color: g.color ?? 'cornflowerblue',
+      miniature: g.miniature ?? 'notfound',
+      title: g.title ?? 'notfound',
     };
     return h;
   });
@@ -108,11 +110,8 @@ function MonSite() {
     );
   };
 
-  const routesToEveryImage: JSX.Element[] = jsonGalleries.reduce(
-    (routes: JSX.Element[], g: IGallery) => [
-      ...routes,
-      ...routesToEveryImageOfGallery(g),
-    ],
+  const routesToEveryImage = jsonGalleries.reduce<JSX.Element[]>(
+    (routes, g) => [...routes, ...routesToEveryImageOfGallery(g)],
     [],
   );
 
