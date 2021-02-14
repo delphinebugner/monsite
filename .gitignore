@@ -38,3 +38,23 @@ lerna-debug.log*
 
 yarn.lock
 package-lock.json
+
+# admin
+mon-site-admin/node_modules
+
+# testing
+mon-site-admin/coverage
+
+# production
+mon-site-admin/build
+
+# misc
+mon-site-admin/.DS_Store
+mon-site-admin/.env.local
+mon-site-admin/.env.development.local
+mon-site-admin/.env.test.local
+mon-site-admin/.env.production.local
+
+mon-site-admin/npm-debug.log*
+mon-site-admin/yarn-debug.log*
+mon-site-admin/yarn-error.log*
