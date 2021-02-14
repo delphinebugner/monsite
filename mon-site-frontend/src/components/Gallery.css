@@ -4,7 +4,7 @@
 
 .Gallery {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   padding-top: 1vw;
   padding-bottom: 1vw;
   overflow-x: auto;
@@ -36,25 +36,26 @@
 }
 
 .Gallery-img-parent {
-  min-width: 50%;
-  border-radius: 15% 5%;
-  margin: 6em 1em 3em 1em;
+  min-width: 200px;
+  border-radius: 32px;
+  margin-left: 24px;
+  padding: 6px;
   transition: all 0.5s ease;
   position: relative;
   cursor: pointer;
+  background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .Gallery-img-child {
-  width: 100%;
-  height: 100%;
-  border-radius: 15% 5%;
+  border-radius: 32px;
   object-fit: cover;
-  cursor: pointer;
   background-position: center;
   background-size: cover;
   opacity: 0.9;
+  overflow: hidden;
   transition: all 0.7s ease;
+  background-color: white;
 }
 
 .Gallery-img-date {
@@ -76,12 +77,13 @@
 .Gallery-img-name {
   font-family: 'Butterfly', serif;
   position: absolute;
-  bottom: -52px;
+  bottom: -50px;
   left: 0px;
   z-index: 1;
   text-align: center;
   width: 100%;
   font-size: 30px;
+  line-height: 100%;
   text-shadow: 2px 0px white, 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -91,9 +93,6 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 10px 20px 0,
     10px 21px 2px rgba(0, 0, 0, 0.2); /*si non renseignee, la couleur de l'ombre est portee par le "color" de img-parent*/
   transform: scale(1.02);
-}
-
-.Gallery-img-child:hover {
 }
 
 .Gallery-placeholder {
@@ -112,18 +111,21 @@
 
 @media screen and (min-width: 650px) {
   .Gallery-img-parent {
-    min-width: 30%;
+    min-width: 200px;
   }
   .Gallery-title {
     font-size: 100px;
     top: 85px;
     left: 100px;
   }
+  .Gallery-img-name {
+    bottom: -70px;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .Gallery-img-parent {
-    min-width: 20%;
+    min-width: 300px;
   }
   .Gallery-img-title {
     left: 20%;

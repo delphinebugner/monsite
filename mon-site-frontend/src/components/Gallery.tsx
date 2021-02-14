@@ -32,8 +32,6 @@ function Gallery({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const sizeMiniature = 400;
-
   useEffect(() => {
     async function loadAllImages() {
       setError(false);
@@ -41,7 +39,7 @@ function Gallery({
       try {
         const promises = elements.map(async e => {
           return e.image
-            ? await AppBackend.getUrlSquared(e.image.src, sizeMiniature)
+            ? await AppBackend.getUrlFullSize(e.image.src)
             : { src: 'None', url: 'NOT_FOUND' };
         });
         const listOfUrls = (await Promise.all(promises)).filter(
@@ -74,8 +72,6 @@ function Gallery({
         key={`parent-${element.id}`}
         onClick={() => goTo(element.route)}
         style={{
-          marginTop: `em`,
-          marginBottom: `3em`,
           color,
         }}
       >
@@ -121,8 +117,8 @@ function Gallery({
 
   return (
     <div>
+      {galleryTitle}
       <div className={'Gallery'}>
-        {galleryTitle}
         {loading && loadingGallery}
         {error && errorGallery}
         {!error && !loading ? elements.map(renderGalleryElement) : null}
