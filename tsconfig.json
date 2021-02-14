@@ -12,5 +12,5 @@
     "baseUrl": "./",
     "incremental": true
   },
-  "exclude": ["mon-site-frontend"]
+  "exclude": ["mon-site-frontend", "mon-site-admin"]
 }
