@@ -7,13 +7,13 @@
   {
     "id": "new",
     "title": "Nouveautés",
-    "miniature": "WZNB5100.jpg",
-    "color": "#1cfeba"
+    "miniature": "Grieg_X.png",
+    "color": "#5D2ECF"
   },
   {
     "id": "musee",
     "title": "Au musée",
-    "miniature": "louvreVinci.jpg",
+    "miniature": "statue_louvre.jpg",
     "color": "#FFD400"
   },
   {
@@ -32,6 +32,12 @@
     "id": "maisons",
     "title": "Maisons",
     "miniature": "maison.jpg",
+    "color": "#BF1363"
+  },
+  {
+    "id": "affiche",
+    "title": "Affiches",
+    "miniature": "OPS_harmonie.jpg",
     "color": "#BF1363"
   },
   {
@@ -55,7 +61,7 @@
   {
     "id": "autriche",
     "title": "Autriche",
-    "miniature": "IMG_E9331.jpg",
+    "miniature": "IMG_E9333.jpg",
     "color": "#011936"
   },
   {
