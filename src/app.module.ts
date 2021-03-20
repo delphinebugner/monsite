@@ -22,8 +22,11 @@ import { ImagesModule } from './images/images.module';
         username: process.env.DATABASE_USERNAME,
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_NAME,
-        autoLoadEntities: process.env.NODE_ENV !== 'production',
-        synchronize: process.env.NODE_ENV !== 'production',
+        autoLoadEntities: true,
+        synchronize: true,
+        extra: {
+          ssl: true,
+        },
       }),
     }),
     ImagesModule,
