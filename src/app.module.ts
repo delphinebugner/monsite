@@ -25,7 +25,7 @@ import { ImagesModule } from './images/images.module';
         autoLoadEntities: true,
         synchronize: true,
         extra: {
-          ssl: true,
+          ssl: process.env.NODE_ENV === 'production',
         },
       }),
     }),
