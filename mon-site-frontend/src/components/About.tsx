@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import AppBackend from '../backend/AppBackend';
 import about from '../config/about.json';
+import { getUrl } from '../cloudinary/utils';
 import { useHistory } from 'react-router';
 import './About.css';
 import CloseButton from './CloseButton';
@@ -14,14 +14,8 @@ function About() {
 
   useEffect(() => {
     async function loadImage() {
-      const loadUrl: {
-        src: string;
-        url: string;
-      } = await AppBackend.getUrlSquared(
-        about.photo.src ? about.photo.src : defaultImage,
-        300,
-      );
-      setUrl(loadUrl.url);
+      const url = getUrl(about.photo.src ? about.photo.src : defaultImage);
+      setUrl(url);
     }
     loadImage();
   }, []);

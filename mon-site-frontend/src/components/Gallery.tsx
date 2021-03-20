@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Spinner from 'react-spinkit';
 import { useHistory } from 'react-router-dom';
 import { IGalleryElement } from '../interfaces/IGalleryElement';
-import AppBackend from '../backend/AppBackend';
 import './Gallery.css';
 import { srcUrl } from '../interfaces/IImage';
 import CloseButton from './CloseButton';
+import { getUrl } from '../cloudinary/utils';
 
 type GalleryProp = {
   elements: IGalleryElement[];
@@ -37,15 +37,12 @@ function Gallery({
       setError(false);
       setLoading(true);
       try {
-        const promises = elements.map(async e => {
+        const urls = elements.map(e => {
           return e.image
-            ? await AppBackend.getUrlFullSize(e.image.src)
+            ? { url: getUrl(e.image.src), src: e.image.src }
             : { src: 'None', url: 'NOT_FOUND' };
         });
-        const listOfUrls = (await Promise.all(promises)).filter(
-          (r: srcUrl) => r.url !== 'NOT_FOUND',
-        );
-        setUrls(listOfUrls);
+        setUrls(urls);
       } catch (err) {
         setError(true);
       }

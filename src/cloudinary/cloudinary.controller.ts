@@ -17,37 +17,34 @@ export class CloudinaryController {
 
   @Get('url/:name')
   @Header('Set-Cookie', 'SameSite=None, Secure')
-  getUrl(@Param() params): string {
-    return this.cloudinaryService.getUrl(params.name);
+  getUrl(@Param('name') name: string): string {
+    return this.cloudinaryService.getUrl(name);
   }
 
   @Get('url/:name/:size')
   @Header('Set-Cookie', 'SameSite=None, Secure')
-  getUrlImageResizedSquare(@Param() params): string {
-    return this.cloudinaryService.getUrlImageResized(
-      params.name,
-      params.size,
-      params.size,
-    );
+  getUrlImageResizedSquare(
+    @Param('name') name: string,
+    @Param('size') size: number,
+  ): string {
+    return this.cloudinaryService.getUrlImageResized(name, size, size);
   }
 
   @Get('url/:name/height/:size')
   @Header('Set-Cookie', 'SameSite=None, Secure')
-  getUrlImageResizedHeight(@Param() params): string {
-    return this.cloudinaryService.getUrlImageResized(
-      params.name,
-      -1,
-      params.size,
-    );
+  getUrlImageResizedHeight(
+    @Param('name') name: string,
+    @Param('size') size: number,
+  ): string {
+    return this.cloudinaryService.getUrlImageResized(name, -1, size);
   }
 
   @Get('url/:name/width/:size')
   @Header('Set-Cookie', 'SameSite=None, Secure')
-  getUrlImageResizedWidth(@Param() params): string {
-    return this.cloudinaryService.getUrlImageResized(
-      params.name,
-      params.size,
-      -1,
-    );
+  getUrlImageResizedWidth(
+    @Param('name') name: string,
+    @Param('size') size: number,
+  ): string {
+    return this.cloudinaryService.getUrlImageResized(name, size, -1);
   }
 }
