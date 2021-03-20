@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Spinner from 'react-spinkit';
 import { CSSTransition } from 'react-transition-group';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { IImage, srcUrl } from '../interfaces/IImage';
-import AppBackend from '../backend/AppBackend';
+import { IImage } from '../interfaces/IImage';
 import './Focus.css';
 import { useHistory } from 'react-router';
 import CloseButton from './CloseButton';
 import { IGallery } from '../interfaces/IGallery';
+import { getUrl } from '../cloudinary/utils';
 
 type FocusProps = {
   image: IImage;
@@ -33,8 +32,7 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps) {
       setLoadingUrl(true);
       setLoadingImg(true);
       try {
-        const u: srcUrl = await AppBackend.getUrlFullSize(image.src);
-        setSrcUrl(u);
+        setSrcUrl({ url: getUrl(image.src), src: image.src });
       } catch (err) {
         setError(true);
       }
