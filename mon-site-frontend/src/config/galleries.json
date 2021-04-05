@@ -2,19 +2,13 @@
   {
     "id": "all",
     "title": "Tout parcourir...",
-    "miniature": "louvreNuit.jpg"
+    "miniature": "WXTJ2569.JPG"
   },
   {
     "id": "new",
     "title": "Nouveautés",
-    "miniature": "Grieg_X.png",
+    "miniature": "DFAB3992.JPG",
     "color": "#5D2ECF"
-  },
-  {
-    "id": "musee",
-    "title": "Au musée",
-    "miniature": "statue_louvre.jpg",
-    "color": "#FFD400"
   },
   {
     "id": "paris",
@@ -25,14 +19,25 @@
   {
     "id": "france",
     "title": "En France",
-    "miniature": "201709-Lille.jpg",
+    "miniature": "ODAR0324.JPG",
     "color": "#17A398"
   },
   {
     "id": "maisons",
     "title": "Maisons",
-    "miniature": "maison.jpg",
+    "miniature": "IMG_0775.JPG",
     "color": "#BF1363"
+  },
+  {
+    "id": "rerb",
+    "title": "Dans le Rer",
+    "miniature": "XOWI7806.JPG"
+  },
+  {
+    "id": "musee",
+    "title": "Au musée",
+    "miniature": "statue_louvre.jpg",
+    "color": "#FFD400"
   },
   {
     "id": "affiche",
@@ -81,11 +86,6 @@
     "title": "Allemagne",
     "miniature": "IMG_2037.jpg",
     "color": "#F7DBA7"
-  },
-  {
-    "id": "rerb",
-    "title": "Dans le Rer",
-    "miniature": "IMG_1490.jpg"
   },
   {
     "id": "musique",
