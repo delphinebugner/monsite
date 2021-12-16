@@ -19,10 +19,6 @@ function MonSite() {
     history.push(path);
   }
 
-  useEffect(() => {
-    AppBackend.testServeur();
-  }, []);
-
   const defaultImage: IImage = {
     id: 19930424,
     title: 'Par défaut',

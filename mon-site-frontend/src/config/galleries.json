@@ -2,25 +2,31 @@
   {
     "id": "all",
     "title": "Tout parcourir...",
-    "miniature": "WXTJ2569.JPG"
+    "miniature": "GVVD9704.JPG"
   },
   {
     "id": "new",
     "title": "Nouveautés",
-    "miniature": "DFAB3992.JPG",
+    "miniature": "plantes.JPG",
     "color": "#5D2ECF"
   },
   {
     "id": "paris",
     "title": "Paris",
-    "miniature": "EMYE7917.jpg",
+    "miniature": "IMG_2212.JPG",
     "color": "gold"
   },
   {
     "id": "france",
     "title": "En France",
-    "miniature": "ODAR0324.JPG",
+    "miniature": "IMG_2487.JPG",
     "color": "#17A398"
+  },
+  {
+    "id": "musee",
+    "title": "Au musée",
+    "miniature": "maier1.JPG",
+    "color": "#FFD400"
   },
   {
     "id": "maisons",
@@ -32,18 +38,6 @@
     "id": "rerb",
     "title": "Dans le Rer",
     "miniature": "XOWI7806.JPG"
-  },
-  {
-    "id": "musee",
-    "title": "Au musée",
-    "miniature": "statue_louvre.jpg",
-    "color": "#FFD400"
-  },
-  {
-    "id": "affiche",
-    "title": "Affiches",
-    "miniature": "OPS_harmonie.jpg",
-    "color": "#BF1363"
   },
   {
     "id": "aquarelle",
@@ -94,9 +88,15 @@
     "color": "#FFA0AC"
   },
   {
+    "id": "affiche",
+    "title": "Affiches",
+    "miniature": "OPS_harmonie.jpg",
+    "color": "#BF1363"
+  },
+  {
     "id": "diverse",
     "title": "Divers",
-    "miniature": "IMG_2895_hdab0r.jpg",
+    "miniature": "MPSP6084.JPG",
     "color": "cornflowerblue"
   }
 ]
