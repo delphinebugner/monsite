@@ -11,7 +11,7 @@
 }
 
 .Focus-openTextPanel {
-  z-index: 2;
+  z-index: 4;
   position: absolute;
   cursor: pointer;
   font-family: Arial, sans-serif;
@@ -19,7 +19,8 @@
   font-size: 7em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 3px 2px 0 #4e4e4e,
     1px 2px 4px rgba(0, 0, 0, 0.3);
-  left: 5%;
+  top: 40px;
+  left: 20px;
   transition: all 0.4s ease-in-out;
 }
 .Focus-openTextPanel:hover {
@@ -32,7 +33,7 @@
   top: 10px;
   cursor: pointer;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 1;
   width: 60vw;
   background-color: white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 10px 10px 0, 10px 11px 2px grey;
@@ -84,6 +85,7 @@
 }
 
 .Focus-prev-next {
+  z-index: 2;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -107,12 +109,20 @@
 }
 
 .Focus-imagePanel {
-  height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.Focus-img {
+  max-width: 95%;
+  max-height: 95%;
+  overflow: hidden;
+  box-shadow: 1px 2px 3px grey;
+  border-radius: 20px;
 }
 
 .Focus-imagePanel::-webkit-scrollbar {
@@ -139,12 +149,6 @@
 .Focus-transition-opacity-active {
   opacity: 0;
   transition: all 750ms ease-in-out;
-}
-
-.Focus-img {
-  height: calc(100% - 3px);
-  box-shadow: 1px 2px 3px grey;
-  border-radius: 20px;
 }
 
 .Focus-placeholder {
