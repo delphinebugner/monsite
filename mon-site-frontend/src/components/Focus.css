@@ -107,12 +107,20 @@
 }
 
 .Focus-imagePanel {
-  height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.Focus-img {
+  max-width: 95%;
+  max-height: 95%;
+  overflow: hidden;
+  box-shadow: 1px 2px 3px grey;
+  border-radius: 20px;
 }
 
 .Focus-imagePanel::-webkit-scrollbar {
@@ -139,12 +147,6 @@
 .Focus-transition-opacity-active {
   opacity: 0;
   transition: all 750ms ease-in-out;
-}
-
-.Focus-img {
-  height: calc(100% - 3px);
-  box-shadow: 1px 2px 3px grey;
-  border-radius: 20px;
 }
 
 .Focus-placeholder {
