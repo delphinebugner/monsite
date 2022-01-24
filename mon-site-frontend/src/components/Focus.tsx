@@ -127,9 +127,9 @@ function Focus({ image, previousId, nextId, gallery, color }: FocusProps) {
 
   return (
     <div>
+      {!visibleTextPanel && closeTextPanel}
       <div className={'Focus'}>
         {textPanel}
-        {closeTextPanel}
         {error && errorPanel}
         {(loadingUrl || loadingImg) && loadingPanel}
         {!error && imagePanel}
